@@ -1,0 +1,107 @@
+﻿body {
+}
+.mod_SchInfo_01 {
+    /*border: 1px solid red;*/
+    /*外觀大小*/
+    width: calc(100% - 300px);
+    /*height: 576px;*/
+
+    /*外觀視覺*/
+    background:rgba(255,255,255,0.9);    
+    border-radius: 15px;
+    background: #8ac0c0;
+    
+    /*內部文字*/
+    /*font-size: 29px;*/
+
+    /*位移空格*/
+    position: absolute;
+    left:150px;
+    top:50px;
+    padding:20px;
+}
+.mod_SchInfo_01_header{
+    /*外觀大小*/  
+    height:35px; 
+        
+    /*外觀視覺*/   
+    
+    /*內部文字*/ 
+    color:white;
+    font-size: 23px;
+    font-weight: bold;
+    
+    /*位移空格*/   
+}
+.mod_SchInfo_01_content{
+    /*border:1px solid red;*/
+    /*外觀大小*/   
+    width:100%;
+    height:calc(100% - 30px);
+        
+    /*外觀視覺*/   
+    background-color:white;
+    
+    /*內部文字*/ 
+    
+    /*位移空格*/   
+
+     
+    padding: 10px;
+}
+.my_class_table > tbody > tr > td {
+    padding: 10px 8px 10px 8px;
+}
+.my_class_table > tbody > tr > td > div > input {
+    /*外觀大小*/   
+    width: 110px;
+    height: 100%;
+        
+    /*外觀視覺*/   
+    border-radius: 7px;
+    border-width: 0px;
+    box-shadow: 3px 3px 5px silver;
+    
+    /*內部文字*/ 
+
+    color: black;
+    
+    /*位移空格*/   
+    padding: 5px 15px;
+
+
+}
+.my_class_link{
+    /*外觀大小*/   
+    width:50px;
+    height:55px;
+        
+    /*外觀視覺*/   
+    
+    /*內部文字*/ 
+    
+    /*位移空格*/   
+      position: absolute;
+      /*top: 30px;
+      left: 0px;*/
+
+      padding-bottom:-50px;
+      float:left;
+    visibility:hidden;
+}
+.mod_SchInfo_01_content > input {
+    /*width: 220px;*/
+    height: 30px;
+    border-radius: 7px;
+    border-width: 0px;
+    background: #eeeeee;
+    background: -moz-linear-gradient(top, #eeeeee 13%, #aaaaaa 100%);
+    background: -webkit-linear-gradient(top, #eeeeee 13%,#aaaaaa 100%);
+    background: linear-gradient(to bottom, #eeeeee 13%,#aaaaaa 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#aaaaaa',GradientType=0 );
+    font-size: 19px;
+    line-height: 10px;
+    color: #555555;
+    text-shadow: 2px 2px 2px white;
+    padding: 5px 15px;
+}

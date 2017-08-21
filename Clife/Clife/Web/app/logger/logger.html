@@ -1,0 +1,130 @@
+﻿<div>
+    <div class="row my_grup_title">
+        紀錄簿
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2">
+            <input type="text" id="StudentBir" class="form-control form_date emptyinput" placeholder="起始日期" ng-model="dateStart" data-autoclose="1" data-date-format="yyyy-MM-dd" bs-datepicker>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" id="StudentBir" class="form-control form_date emptyinput" placeholder="結束日期" ng-model="dateEnd" data-autoclose="1" data-date-format="yyyy-MM-dd" bs-datepicker>
+        </div>
+
+        <button type="button" class="btn btn-success" id="" ng-click="search()">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            查詢
+        </button>
+    </div>
+    <br />
+    <div class="container" style="width:100%">
+        <ul class="nav nav-pills">
+            <li style="cursor:pointer" class="active" ng-click="setTable(1)"><a data-toggle="pill" data-target="#menu1">未填紀錄</a></li>
+            <li style="cursor:pointer" ng-click="setTable(2)"><a data-toggle="pill" data-target="#menu2">已填紀錄</a></li>
+        </ul>
+    </div>
+
+    <div class="row" style="border:#A9A9A9 1px solid;background-color:white;">
+
+        <div class="col-md-12">
+            <div class="tab-content">
+                <div id="menu1" class="tab-pane fade in active" style="padding:10px">
+                    <div id="divStudentList" class="col-md-8" ng-style="menu1LiHidden">
+                        <div class="tab-content info-opacity" style="padding-top:10px; position:relative;">
+                            <div class="row" id="samename_class" style="text-align:center;">
+                                <table id="" class="table table-bordered my_table my_class_table">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align:center;">時間</th>
+                                            <th style="text-align:center;">分行</th>
+                                            <th style="text-align:center;">對象</th>
+                                            <th style="text-align:center;">活動事件</th>
+                                            <th style="text-align:center;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in menu1List">
+                                            <td>{{item.time}}</td>
+                                            <td>{{item.localName}}</td>
+                                            <td>{{item.title}}</td>
+                                            <td>{{item.event}}</td>
+                                            <td><button id="" class="btn btn-info" ng-click="menu1Click(item.id)">選取</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="MainTable" class="col-md-4" ng-style="choosedMenu1">
+                        <div class="tab-content">
+                            <div class="col-lg-12">
+                                <div class="col-lg-12">
+                                    <div style="height:50px">
+                                        <button id="" class="btn btn-info">送出</button>
+                                        <button id="" class="btn btn-info">清空</button>
+                                    </div>
+                                    <div style="height:300px">
+                                        <h3 class="panel-title">活動日誌</h3>
+                                        <textarea name="Text1" style="position: relative; margin: 10px 10px 10px 10px; width:90%; height: 80%"></textarea>
+                                    </div>
+                                    <div style="height:180px">
+                                        <h3 class="panel-title">主管回饋</h3>
+                                        <textarea name="Text1" style="position: relative; margin: 10px 10px 10px 10px; width:90%; height: 80%"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu2" class="tab-pane" style="padding:10px">
+                    <div id="divStudentList" class="col-md-8" ng-style="menu2LiHidden">
+                        <div class="tab-content info-opacity" style="padding-top:10px; position:relative;">
+                            <div class="row" id="samename_class" style="text-align:center;">
+                                <table id="" class="table table-bordered my_table my_class_table">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align:center;">時間</th>
+                                            <th style="text-align:center;">分行</th>
+                                            <th style="text-align:center;">對象</th>
+                                            <th style="text-align:center;">活動事件</th>
+                                            <th style="text-align:center;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in menu2List">
+                                            <td>{{item.time}}</td>
+                                            <td>{{item.localName}}</td>
+                                            <td>{{item.title}}</td>
+                                            <td>{{item.event}}</td>
+                                            <td><button id="" class="btn btn-info" ng-click="menu1Click(item.id)">選取</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="MainTable" class="col-md-4" ng-style="choosedMenu2">
+                        <div class="tab-content">
+                            <div class="col-lg-12">
+                                <div class="col-lg-12">
+                                    <div style="height:350px">
+                                        <h3 class="panel-title">活動日誌</h3>
+                                        <textarea name="Text1" style="position: relative; margin: 10px 10px 10px 10px; width:90%; height: 80%">針對理專王OO進行奧多欣商品推動</textarea>
+                                    </div>
+                                    <div style="height:180px">
+                                        <h3 class="panel-title">主管回饋</h3>
+                                        <textarea name="Text1" style="position: relative; margin: 10px 10px 10px 10px; width:90%; height: 80%">很好!!繼續加油!!</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

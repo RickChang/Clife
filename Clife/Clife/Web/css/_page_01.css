@@ -1,0 +1,742 @@
+﻿html{
+    
+    /*外觀大小*/
+    height: 100%; 
+    overflow:auto;
+}
+
+body { 
+    /*border: 1px solid yellow;*/
+
+    /*外觀大小*/
+    height:100%; 
+    overflow:auto;
+    /*外觀視覺*/
+    background: #E8FFFB;
+    /*
+    background: #6dd0cd;  
+    background: -moz-radial-gradient(center, ellipse cover,  #6dd0cd 28%, #009e93 86%); 
+    background: -webkit-radial-gradient(center, ellipse cover,  #6dd0cd 28%,#009e93 86%); 
+    background: radial-gradient(ellipse at center,  #6dd0cd 28%,#009e93 86%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6dd0cd', endColorstr='#009e93',GradientType=1 ); 
+      
+    -moz-background-size:100% 150%; 
+    -webkit-background-size:100% 150%; 
+    -o-background-size:100% 150%; 
+    background-size:100% 150%; */
+
+    /*內部文字*/
+    font-size:16px;
+	-webkit-font-smoothing: antialiased;
+    font-family:Microsoft JhengHei;
+    
+    /*位移空格*/
+    padding: 50px 0px 0px 70px;
+}
+
+
+.my_container{ 
+    /*border: 1px solid red;*/
+
+    /*外觀大小*/ 
+    height:100%;
+    width:100%;
+    
+    /*外觀顏色*/
+    background-color:#E8FFFB;
+
+    /*內容*/
+    word-break: break-all;
+
+    /*位移空格*/
+    padding: 20px 20px 20px 50px;
+}
+
+
+/*上面header*/
+.my_header_area {
+    /*border: 1px solid blue;*/
+    /*外觀大小*/
+    width: 100%;
+    height: 50px;
+    /*外觀視覺*/
+    /*background: #6dd0cd;*/
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7fefef+0,61b7b6+70 */
+    background: #2eb82e; /* Old browsers 7fefef 61b7b6 */
+    background: -moz-linear-gradient(top, #2eb82e 0%, #32a73d 70%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #2eb82e 0%,#32a73d 70%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #2eb82e 0%,#32a73d 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7fefef', endColorstr='#61b7b6',GradientType=0 ); /* IE6-9 */
+    /*內部文字*/
+    /*位移空格*/
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+.my_header_logo {
+    /*外觀大小*/   
+        
+    /*外觀視覺*/   
+    
+    /*內部文字*/ 
+    
+    /*位移空格*/   
+    padding:5px 5px 5px 10px;
+    float:left;
+}
+.my_header_logo > img {
+    height:40px;
+}
+.my_header_name{
+    /*border:1px solid red;*/
+    /*外觀大小*/   
+    height:50px;
+        
+    /*外觀視覺*/   
+    
+    /*內部文字*/ 
+    color:white;
+    font-size: 26px;
+    font-weight:bold;
+    text-shadow:1px 1px 1px #555555;
+    
+    /*位移空格*/   
+    float:left;
+    padding:15px 0 0 0;
+}
+.my_header_btn{
+    /*border:1px solid red;*/
+    /*外觀大小*/   
+    height:50px;
+    width:50px;
+        
+    /*外觀視覺*/   
+    
+    /*內部文字*/ 
+    color:white;
+    font-size: 29px;
+    font-weight:bold;
+    text-shadow:1px 1px 1px #555555;
+    
+    /*位移空格*/   
+    float:left;
+    padding:10px;
+}
+.my_header_unit {
+    /*外觀視覺*/
+    /*內部文字*/
+    color: white;
+    font-size: 29px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #555555;
+    /*位移空格*/
+    float: right;
+    padding: 15px;
+}
+
+/*左側選單*/
+.my_menu_area {
+    /*border: 1px solid blue;*/
+    /*外觀大小*/
+    width: 70px;
+    height: calc(100% - 40px);
+    /*外觀視覺*/
+    /*background: #6dd0cd;*/
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#61b7b6+85,519690+99 */
+    background: #32a73d; /* Old browsers 61b7b6 519690 */
+    background: -moz-linear-gradient(top, #32a73d 85%, #1f7a1f 99%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #32a73d 85%,#1f7a1f 99%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #32a73d 85%,#1f7a1f 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61b7b6', endColorstr='#519690',GradientType=0 ); /* IE6-9 */
+    /*內部文字*/
+    /*位移空格*/
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+}
+.my_menu_list1{
+    /*border:1px solid purple;*/
+
+    /*外觀大小*/   
+    height:500px;
+    width:100px;
+        
+    /*外觀視覺*/   
+    
+    /*內部文字*/ 
+    
+    /*位移空格*/   
+    position:relative;
+    left:10px;
+    top:30px;
+}
+.my_menu_list2{
+    /*border:1px solid red;*/
+
+    /*外觀大小*/   
+    height:100px;
+    width:100px;
+        
+    /*外觀視覺*/   
+    
+    /*內部文字*/ 
+    
+    /*位移空格*/   
+    position:fixed;
+    left:10px;
+    bottom:30px;
+}
+.my_menu_list_item {
+    /*border:1px solid green;*/
+    /*外觀大小*/
+    /*width:100px; dennis*/
+    width: 80px;
+    /*height:120px; dennis*/
+    /*外觀視覺*/
+    border-radius: 15px 15px 15px 15px;
+    background: #e1e8de;
+    box-shadow: 7px 5px 5px rgba(111,111,111,0.45);
+    /*內部文字*/
+    vertical-align: central;
+    text-align: center;
+    font-weight: bold;
+    color: #30706d;
+    /*line-height:40px;*/
+    /*位移空格*/
+    margin-bottom: 8px;
+    padding: 8px;
+}
+.my_menu_list_item > div:nth-child(1) img
+{
+    /*width:80px;
+    height:80px;*/
+    
+    width:50px;
+
+}
+.my_menu_list_item > div:nth-child(1){
+    /*border:1px solid red;*/    
+    /*外觀大小*/   
+    /*width:80px; dennis
+    height:80px; dennis*/
+        
+    /*外觀視覺*/   
+    border-radius:10px 10px 10px 10px;
+    background:#ffffff;
+    
+    /*內部文字*/ 
+    font-size:16px;
+    
+    /*位移空格*/   
+    position: relative;
+    /*padding:85px 0px 0 0px;*/
+}
+.my_menu_list_item > div:nth-child(2){
+    /*border:1px solid red;*/    
+    /*外觀大小*/   
+    width:80px;
+    height:20px; 
+    
+    /*內部文字*/ 
+    /*font-size:19px; dennis*/
+    color:white;
+    text-shadow:2px 2px 2px #333333;
+    font-weight: bold;
+    
+    /*位移空格*/   
+    position: relative;
+    /*padding:5px 0; dennis*/
+    padding-right:10px;
+    padding-top:5px;
+
+
+}
+
+/*左下LOGO區*/
+.my_area_corner_01 {
+    /* border: 1px solid blue;*/
+    /*外觀大小*/
+    width: 50px;
+    height: 50px;
+    /*外觀視覺*/
+    /*background-image: url('../img/zzzPL.png');*/
+    background-size: 50px 50px;
+    /*內部文字*/
+    /*位移空格*/
+    position: fixed;
+    top: 50px;
+    left: 70px;
+}
+/*右下LOGO區*/
+.my_area_corner_02 {
+    /* border: 1px solid blue;*/
+    /*外觀大小*/
+    width: 50px;
+    height: 50px;
+    /*外觀視覺*/
+    /*background-image: url('../img/zzzPR.png');*/
+    background-size: 50px 50px;
+    /*內部文字*/
+    /*位移空格*/
+    position: fixed;
+    top: 50px;
+    right: 0px;
+}
+
+/*----------------------------------------------------------------------*/
+
+/*群組區塊標題*/
+.my_grup_title{
+    /*外觀大小*/   
+        
+    /*外觀視覺*/   
+    
+    /*內部文字*/
+    font-size: 23px; 
+    font-weight:bolder;
+    text-shadow: 2px 2px 2px #CDCDCD;
+    color:#28908b;
+    /*text-decoration: underline;*/
+    
+    /*位移空格*/   
+    margin-bottom:15px;
+}
+
+
+/*table清單表頭*/
+.my_table{
+    /*box-shadow: 7px 5px 5px rgba(111,111,111,0.45);*/
+}
+
+.my_table > thead
+{ 
+    /*外觀大小*/   
+        
+    /*外觀視覺*/   
+background: #7ae2df;  
+background: -moz-linear-gradient(top,  #7ae2df 0%, #65b2b2 100%);  
+background: -webkit-linear-gradient(top,  #7ae2df 0%,#65b2b2 100%);  
+background: linear-gradient(to bottom,  #7ae2df 0%,#65b2b2 100%);  
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ae2df', endColorstr='#65b2b2',GradientType=0 ); 
+    
+    /*內部文字*/ 
+    color:white;
+    
+    /*位移空格*/   
+
+}
+/*交錯列顏色*/
+    .my_table > tbody tr:nth-child(odd) {
+        background-color: #e1e8de;
+    }
+.dennis_table > tbody tr:nth-child(odd) {
+    background-color: #E3F9F5;
+}
+
+.my_table > tbody tr:nth-child(even){
+	background-color:#fff;
+}
+
+.my_label_new{
+    padding:0 5px;
+}
+.my_label_important{
+    font-size:23px;
+}
+
+
+/**/
+.mod_01 {
+    /*border: 1px solid red;*/
+    /*外觀大小*/
+    width: 840px;
+    height: 240px;
+
+    /*外觀視覺*/
+    background:rgba(255,255,255,0.9);
+    
+    /*內部文字*/
+    font-size: 29px;
+
+    /*位移空格*/
+    position: absolute;
+    left:calc((100% - 800px)/2);
+    top:calc((100% - 200px)/2);
+    padding:20px;
+
+}
+.mod_01_01 {
+    /*border: 1px solid red;*/
+    /*外觀大小*/
+    width: 840px;
+    height: 440px;
+
+    /*外觀視覺*/
+    background:rgba(255,255,255,0.9);
+    
+    /*內部文字*/
+    font-size: 23px;
+
+    /*位移空格*/
+    position: absolute;
+    left:calc((100% - 800px)/2);
+    top:calc((100% - 400px)/2);
+    padding:20px;
+
+}
+.mod_02 {
+    /*border: 1px solid red;*/
+    /*外觀大小*/
+    width: 840px;
+    height: 440px;
+
+    /*外觀視覺*/
+    background:rgba(255,255,255,0.9);
+    
+    /*內部文字*/
+    font-size: 23px;
+
+    /*位移空格*/
+    position: absolute;
+    left:calc((100% - 800px)/2);
+    top:calc((100% - 400px)/2);
+    padding:20px;
+
+}
+.mod_02_01 {
+    /*border: 1px solid red;*/
+    /*外觀大小*/
+    width: 1080px;
+    height: 500px;
+    /*外觀視覺*/
+    background: rgba(255,255,255,0.9);
+    /*內部文字*/
+    font-size: 23px;
+    /*位移空格*/
+    position: absolute;
+    left: calc((100% - 1040px)/2);
+    top: calc((100% - 400px)/2);
+    padding: 20px;
+    overflow: hidden;
+}
+.mod_03 {
+    /*border: 1px solid red;*/
+    /*外觀大小*/
+   width: 1040px;
+    height: 440px;
+
+    /*外觀視覺*/
+    background:rgba(255,255,255,0.9);
+    
+    /*內部文字*/
+    font-size: 23px;
+
+    /*位移空格*/
+    position: absolute;
+    left:calc((100% - 1040px)/2);
+    top:calc((100% - 400px)/2);
+    padding:20px;
+
+}
+.mod_item {
+    /*border:1px solid orange;*/
+    /*外觀大小*/
+    width: 180px;
+    height: 180px;
+    /*外觀視覺*/
+    /*background-size:160px 128px;
+     background-position:20px 20px;*/
+    background-size: 150px 120px;
+    background-position: 20px 20px;
+    background-repeat: no-repeat;
+    box-shadow: 10px 10px 10px #CDCDCD;
+    border-radius: 25px;
+    /*內部文字*/
+    text-align: center;
+    font-weight: bolder;
+    text-shadow: 10px 3px 3px #CDCDCD;
+    color: #4c908e;
+    /*位移空格*/
+    float: left;
+    padding-top: 155px;
+    margin: 10px;
+    position:relative;
+}
+.mod_item:hover {
+   background-color:#DEDEDE;
+}
+
+.mod_item_add {
+    width: 32px;
+    height: 32px;
+    background-image: url('../img/btn_func_add.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    /*left: 160px;
+    top: 10px*/
+}
+.mod_item_remove {
+    width: 32px;
+    height: 32px;
+    background-image: url('../img/btn_func_like.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    /*left: 160px;
+    top: 10px*/
+}
+.mod_item_favorite_edit {
+    position:absolute;
+    left:742px;
+    top:-10px;
+}
+.mod_item_favorite_save {
+    position:absolute;
+    left:742px;
+    top:-10px;
+}
+
+.mod_item2 {
+    /*border:1px solid orange;*/    
+
+    /*外觀大小*/  
+    width:150px; height:160px; 
+
+        
+    /*外觀視覺*/   
+     /*background-size:160px 128px;
+     background-position:20px 20px;*/
+     background-size:125px 100px;
+     background-position:20px 20px;
+     background-repeat:no-repeat;
+     box-shadow:10px 10px 10px #CDCDCD;
+     border-radius:25px;
+    
+    /*內部文字*/  
+    text-align: center; 
+    font-weight:bolder;
+    text-shadow: 3px 3px 10px #CDCDCD; 
+    color:#4c908e;
+    
+    /*位移空格*/ 
+    float:left; 
+    padding-top: 130px; 
+}
+.mod_item2:hover {
+   background-color:#DEDEDE;
+}
+.divMenu {
+    /*border: 1px solid red;*/
+    /*外觀大小*/
+    width: 1060px;
+    height: 400px;
+    /*外觀視覺*/
+    background: rgba(255,255,255,0.9);
+    /*內部文字*/
+    font-size: 23px;
+    /*位移空格*/
+    /*position: absolute;
+    left: calc((100% - 1040px)/2);
+    top: calc((100% - 400px)/2);
+    padding: 20px;*/
+    overflow: auto;
+}
+.homeTh {
+    width: 10%;
+}
+
+.pie-chart-tiny {
+    display: inline-block;
+    position: relative;
+    margin: 3px 10px 0;
+    padding-bottom: 13px;
+}
+
+.tile-light {
+    background: rgba(0,0,0,0.25);
+}
+
+.tile, .tile-dark, .tile-title, .table th {
+    /*background: rgba(0,0,0,0.35);*/
+}
+
+.tile-config {
+    position: absolute;
+    top: 0;
+    height: 27px;
+    right: 0;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    border: 0;
+    margin: 0;
+    font-size: 12px;
+    background: rgba(0,0,0,0.9);
+}
+
+    .dropdown-menu:not(.animated) {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+    }
+
+.dropdown-menu, .elfinder-button-menu, .elfinder-contextmenu {
+    background: rgba(255,255,255,0.85);
+    margin-top: -1px;
+    overflow: hidden;
+    color: #000;
+}
+
+.dropdown-menu-alt {
+    background: rgba(0, 0, 0, 0.68);
+}
+
+
+.dropdown-menu > li > a {
+    color: #000;
+    padding: 3px 13px;
+    font-family: "微軟正黑體", "Microsoft JhengHei",open-sans-regular;
+}
+
+.dropdown-menu-alt > li > a {
+    color: rgba(255,255,255,0.8);
+    text-shadow: none;
+}
+
+
+.dropdown-menu > li > a:hover, .elfinder-button-menu-item:hover, .elfinder-contextmenu .ui-state-hover {
+    background: rgba(0, 0, 0, 0.14);
+    color: #000;
+}
+
+.dropdown-menu-alt > li > a:hover, .profile-menu > li > a:hover {
+    color: #fff;
+}
+
+.dropdown-menu .divider {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.dropdown-menu-alt .divider {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.p-10 {
+    padding: 10px !important;
+}
+
+/* Chat */
+.chat {
+    position: fixed;
+    bottom: 0;
+    width: 150px;
+    right: 15px;
+    z-index: 1000;
+    background: rgba(0,0,0,0.85);
+    height: 27px;
+    font-family: "微軟正黑體", "Microsoft JhengHei",open-sans-regular;
+    overflow: hidden;
+    font-family: "微軟正黑體", "Microsoft JhengHei",open-sans-regular;
+}
+
+    .chat.toggled {
+        width: auto;
+        height: 350px;
+    }
+
+.chat-body {
+    background: rgba(255, 255, 255, 0.7);
+    height: 277px;
+    overflow: auto;
+    padding: 10px;
+    width: 300px;
+}
+
+.chat .chat-body .media-body {
+    min-width: 100px;
+    background: #fff;
+    color: #000;
+    min-height: 50px;
+    padding: 5px;
+    font-size: 11px;
+}
+
+.chat .media-body > small {
+    display: block;
+    margin-bottom: -2px;
+    font-size: 9px;
+    margin-top: 10px;
+    color: #000;
+}
+
+.chat .chat-body .media > [class*="pull-"] {
+    margin: 0;
+}
+
+.chat .btn {
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.chat .status {
+    font-size: 14px;
+    margin-top: 3px;
+    color: rgb(3, 204, 3);
+}
+
+.chat .chat-footer {
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin: 0;
+}
+
+    .chat .chat-footer textarea {
+        background: transparent;
+        border: 0;
+        color: #333;
+        box-shadow: none;
+        font-size: 12px;
+    }
+
+    .chat .chat-footer [class*="pull-"] {
+        color: #7A7A7A;
+        font-size: 14px;
+        padding: 17px 7px;
+        margin: 0;
+    }
+
+        .chat .chat-footer [class*="pull-"]:hover {
+            color: #000;
+            cursor: pointer;
+        }
+
+    .chat .chat-footer .pull-left {
+        border-right: 1px solid rgba(51, 51, 51, 0.17);
+    }
+
+    .chat .chat-footer .pull-right {
+        border-left: 1px solid rgba(51, 51, 51, 0.17);
+    }
+
+.chat-list {
+    height: 100%;
+    margin: 0 !important;
+    width: 0;
+    opacity: 0;
+}
+
+    .chat-list.toggled {
+        opacity: 1;
+        width: 200px;
+    } border-left: 1px solid rgba(51, 51, 51, 0.17);
+}
+
+/*==========================*/
+
+ 

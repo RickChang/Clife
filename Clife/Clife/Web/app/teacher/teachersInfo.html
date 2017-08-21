@@ -1,0 +1,65 @@
+﻿<div>
+    <div class="row my_grup_title">
+        屬員輔導
+        <img src="img/btn-blue-info.png" style="width:30px; height:30px;margin-left:10px;padding-right:5px;padding-bottom:5px;" />
+    </div>
+
+    <div class="row" style="margin-bottom:10px;padding:0px;">
+
+        <span style="font-size:16px;font-weight:bold;">
+            督導：
+        </span>
+        <select id="sltMember" class="form-control" style="width:90px;display:inline-block;" ng-options="item.memName for item in members track by item.menID" ng-model="sltMem" ng-change="filter()">
+            <option value="">請選擇</option>
+        </select>
+        <!--<span class="" style="padding-left:20px">
+            <a href="#teacherInfoDtl/0" class="btn btn-success" >新增</a>
+            <button type="button" class="btn btn-success" id="btnSearch" ng-click="search()">查詢</button>
+        </span>-->
+
+
+    </div>
+
+    <div class="row" id="samename_class">
+        <table id="" class="table table-bordered my_table my_class_table">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>未回饋</th>
+                    <th>責任額</th>
+                    <th>新契約P數/件數</th>
+                    <th>達成率</th>
+                    <th>輔導</th>
+                    <th>會議</th>
+                    <th>行政</th>
+                    <th>其他</th>
+                    <th style="color:red">總計</th>
+                    <th>活動紀錄</th>
+                    <th>輔導面談</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="item in dataFilter">
+                    <td>{{item.teacherName}}</td>
+                    <td>{{item.unBack}}</td>
+                    <td>{{item.du}}</td>
+                    <td>{{item.df}}</td>
+                    <td>{{item.pRate}}</td>
+                    <td>{{item.c}}</td>
+                    <td>{{item.meeting}}</td>
+                    <td>{{item.d}}</td>
+                    <td>{{item.other}}</td>
+                    <td style="color:red">{{item.total}}</td>
+                    <td>
+                        <a href="#support">活動紀錄</a>
+                    </td>
+                    <td>
+                        <a href="#interview">輔導面談</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,71 @@
+﻿<div>
+    <div class="row my_grup_title">
+        訊息管理
+    </div>
+    <div class="container" style="width:100%">
+        <div class="row" style="border:#A9A9A9 1px solid;background-color:white">
+
+            <div class="col-md-12">
+                <div class="tab-content">
+                    <table class="table table-bordered my_table my_class_table" style="margin-top:10px">
+                        <tr>
+                            <td>訊息種類</td>
+                            <td>
+                                <select class="form-control" ng-model="sltType" ng-options="item.name for item in sltTypes" ng-change="typeChange()">
+                                    <option value="">請選擇</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>訊息科室</td>
+                            <td>
+                                <select class="form-control" ng-model="sltDept" ng-options="item.name for item in depts" ng-disabled="typeSelected">
+                                    <option value="">請選擇</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>訊息對象</td>
+                            <td>
+                                <select class="form-control" ng-model="sltAO" ng-options="item.name for item in lstAO" ng-disabled="typeSelected">
+                                    <option value="">請選擇</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>訊息內容</td>
+                            <td>
+                                <textarea name="txtArea" style="position: relative; margin: 10px 10px 10px 10px; width:90%; height: 80%"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--<div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+
+                                <h3 class="panel-title">訊息種類</h3>
+                            </div>
+                            <div class="col-md-8">
+                                <select id="" class="form-control" style="width:200px;display:inline-block;margin:5px;" ng-model="sltWeek" ng-options="item.week for item in weeks" ng-style="sltWeekCss">
+                                    <option value="">請選擇</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="row">
+                        <div class="col-md-2">
+                            <button id="" class="btn btn-info">清空</button>
+                            <button id="" class="btn btn-info">送出</button>
+                        </div>
+                        <div class="col-md-1">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+    </div>
+</div>

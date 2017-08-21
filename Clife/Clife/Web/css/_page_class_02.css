@@ -1,0 +1,642 @@
+﻿body {
+}
+
+
+.my_subjccfg_list{
+    /*border:1px solid red;*/
+    /*外觀大小*/   
+        
+    /*外觀視覺*/   
+    width:calc((100% - 50px)/3);
+    height:250px;
+    /*border-radius:10px;*/
+    
+    /*內部文字*/ 
+    
+    /*位移空格*/   
+    margin-left:20px;
+    display: inline-block;
+}
+
+
+.my_subjccfg_list:first-child{
+    /*border:1px solid blue;*/
+    /*外觀大小*/   
+        
+    /*外觀視覺*/   
+    
+    /*內部文字*/ 
+    
+    /*位移空格*/   
+    margin-left:0px;
+}
+ 
+
+
+
+/**/
+/*目前班級狀態欄位*/
+.class_status1a{ 
+    /*外觀大小*/   
+    width:100%;
+    height:35px;
+        
+    /*外觀視覺*/   
+    border-radius:15px;
+    box-shadow: 3px 3px 10px rgba(168, 168, 168, 0.75);
+
+    /* 顏色1 */
+    background: #81b861;  
+    background: -moz-linear-gradient(top,  #81b861 0%, #6fb242 50%, #61a235 100%); 
+    background: -webkit-linear-gradient(top,  #81b861 0%,#6fb242 50%,#61a235 100%); 
+    background: linear-gradient(to bottom,  #81b861 0%,#6fb242 50%,#61a235 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#81b861', endColorstr='#61a235',GradientType=0 );
+
+    /* 顏色2 
+    background: #ecce8b; 
+    background: -moz-linear-gradient(top,  #ecce8b 0%, #d3b87c 50%, #d3b87c 100%);  
+    background: -webkit-linear-gradient(top,  #ecce8b 0%,#d3b87c 50%,#d3b87c 100%); 
+    background: linear-gradient(to bottom,  #ecce8b 0%,#d3b87c 50%,#d3b87c 100%);  
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecce8b', endColorstr='#d3b87c',GradientType=0 ); */ 
+
+    /* 顏色3
+    background: #ecce8b; 
+    background: -moz-linear-gradient(top,  #ffcb58 0%, #f8be3f 50%, #e3aa2d 100%);  
+    background: -webkit-linear-gradient(top,  #ffcb58 0%,#f8be3f 50%,#e3aa2d 100%); 
+    background: linear-gradient(to bottom,  #ffcb58 0%,#f8be3f 50%,#e3aa2d 100%);  
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcb58', endColorstr='#e3aa2d',GradientType=0 );  */
+     
+    /*內部文字*/ 
+    color:white;
+    line-height:35px;
+    font-size:16px;
+    /*text-align: center;*/
+    text-shadow:3px 3px 5px #666666;
+    font-weight: bold;
+    
+    /*位移空格*/   
+    padding-left: 15px;
+    margin-bottom:10px;
+}
+
+.class_status1b{ 
+    /*外觀大小*/   
+    width:100%;
+    height:35px;
+        
+    /*外觀視覺*/   
+    border-radius:15px;
+    box-shadow: 3px 3px 10px rgba(168, 168, 168, 0.75);
+
+    /* 顏色1 */
+    background: #61b1b8;  
+    background: -moz-linear-gradient(top,  #5daeb5 0%, #429bb2 50%, #428da0 100%); 
+    background: -webkit-linear-gradient(top,  #5daeb5 0%,#429bb2 50%,#428da0 100%); 
+    background: linear-gradient(to bottom,  #5daeb5 0%,#429bb2 50%,#428da0 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5daeb5', endColorstr='#428da0',GradientType=0 );
+
+    /* 顏色2 
+    background: #ecce8b; 
+    background: -moz-linear-gradient(top,  #ecce8b 0%, #d3b87c 50%, #d3b87c 100%);  
+    background: -webkit-linear-gradient(top,  #ecce8b 0%,#d3b87c 50%,#d3b87c 100%); 
+    background: linear-gradient(to bottom,  #ecce8b 0%,#d3b87c 50%,#d3b87c 100%);  
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecce8b', endColorstr='#d3b87c',GradientType=0 ); */ 
+
+    /* 顏色3
+    background: #ecce8b; 
+    background: -moz-linear-gradient(top,  #ffcb58 0%, #f8be3f 50%, #e3aa2d 100%);  
+    background: -webkit-linear-gradient(top,  #ffcb58 0%,#f8be3f 50%,#e3aa2d 100%); 
+    background: linear-gradient(to bottom,  #ffcb58 0%,#f8be3f 50%,#e3aa2d 100%);  
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcb58', endColorstr='#e3aa2d',GradientType=0 );  */
+     
+    /*內部文字*/ 
+    color:white;
+    line-height:35px;
+    font-size:16px;
+    /*text-align: center;*/
+    text-shadow:3px 3px 5px #666666;
+    font-weight: bold;
+    
+    /*位移空格*/   
+    padding-left: 15px;
+    margin-bottom:10px;
+}
+
+/*升級編班準備欄位*/
+.class_status2a{ 
+    /*外觀大小*/   
+    width:100%;
+    height:35px;
+        
+    /*外觀視覺*/   
+    border-radius:15px;
+    /*border:3px #ffcb58 solid;*/
+    box-shadow: 3px 3px 10px rgba(168, 168, 168, 0.75);
+    background-color:#e4f1de;/*background-color:#ffe8b4;*/
+     
+    /*內部文字*/ 
+    color:#6b9466;/*color:#cf930f;*/
+    line-height:35px;
+    /*line-height:29px;*/
+    font-size:16px;  
+     
+    /*位移空格*/   
+    padding-left:15px;
+    margin-bottom:10px;
+}
+.class_status2b{ 
+    /*外觀大小*/   
+    width:100%;
+    height:35px;
+        
+    /*外觀視覺*/   
+    border-radius:15px;
+    /*border:3px #ffcb58 solid;*/
+    box-shadow: 3px 3px 10px rgba(168, 168, 168, 0.75);
+    background-color:#def0f1;/*background-color:#ffe8b4;*/
+     
+    /*內部文字*/ 
+    color:#668794;/*color:#cf930f;*/
+    line-height:35px;
+    /*line-height:29px;*/
+    font-size:16px;  
+     
+    /*位移空格*/   
+    padding-left:15px;
+    margin-bottom:10px;
+}
+.class_status2g{ 
+    /*外觀大小*/   
+    width:100%;
+    height:35px;
+        
+    /*外觀視覺*/   
+    border-radius:15px;
+    /*border:3px #ffcb58 solid;*/
+    box-shadow: 3px 3px 10px rgba(168, 168, 168, 0.75);
+    background-color:#dedede;/*background-color:#ffe8b4;*/
+     
+    /*內部文字*/ 
+    color:#adadad;/*color:#cf930f;*/
+    line-height:35px;
+    /*line-height:29px;*/
+    font-size:16px;  
+     
+    /*位移空格*/   
+    padding-left:15px;
+    margin-bottom:10px;
+}
+
+/*學期初設定*/
+.class_statuslist{ 
+    /*外觀大小*/   
+    width:100%;
+    height:45px;
+        
+    /*外觀視覺*/   
+    border-radius:20px;
+    /*border:3px #ffcb58 solid;*/
+    box-shadow: 3px 3px 10px rgba(168, 168, 168, 0.75);
+    background-color:#e4f1de;/*background-color:#ffe8b4;*/
+     
+    /*內部文字*/ 
+    color:#666666;/*color:#cf930f;#6b9466*/
+    line-height:45px;
+    /*line-height:29px;*/
+    font-size:18px;  
+     
+    /*位移空格*/   
+    padding-left:15px;
+    margin-bottom:15px;
+}
+
+.my_text_input
+{ 
+    height: 35px;
+    border-radius: 7px;
+    border-width: 0px;
+    box-shadow: 3px 3px 5px silver;
+    color: black;
+    padding: 5px 7px;
+}
+ 
+
+.my_subj_schedule_notcourse{
+    background-color:#a7c5c5!important;
+}
+.my_subj_schedule_course{
+    background-color:#b5e6e3!important;
+}
+
+/*尚未存檔*/
+.my_notsaveyet{ 
+    color:white;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+
+
+/*是否覆蓋各年級樣板*/
+.schedule_mod_02 {
+    /*border: 1px solid red;*/
+    /*外觀大小*/
+    width: 400px;
+    height: 430px;
+
+    /*外觀視覺*/
+    background:rgba(255,255,255,0.9);
+    
+    /*內部文字*/
+    font-size: 19px;
+
+    /*位移空格*/
+    position: absolute;
+    left:calc((100% - 400px)/2);
+    top:calc((100% - 470px)/2);
+    padding:20px;
+
+}
+.schedule_mod_01 {
+    /*border: 1px solid red;*/
+    /*外觀大小*/
+    width: 300px;
+    height: 390px;
+
+    /*外觀視覺*/
+    background:rgba(255,255,255,0.9);
+    
+    /*內部文字*/
+    font-size: 19px;
+
+    /*位移空格*/
+    position: absolute;
+    left:calc((100% - 300px)/2);
+    top:calc((100% - 370px)/2);
+    padding:20px;
+
+}
+.my_yn_btn{
+    /*外觀大小*/ 
+    width:100%;  
+    height:40px;  
+        
+    /*外觀視覺*/   
+        background: #eeeeee;
+    background: -moz-linear-gradient(top, #eeeeee 13%, #aaaaaa 100%);
+    background: -webkit-linear-gradient(top, #eeeeee 13%,#aaaaaa 100%);
+    background: linear-gradient(to bottom, #eeeeee 13%,#aaaaaa 100%);
+    
+    border-radius: 7px;
+    border-width: 0px;
+
+    /*內部文字*/ 
+    text-shadow: 2px 2px 2px white;
+    color: #555555;
+    
+    /*位移空格*/    
+    margin-top:15px;
+}
+.schedule_mod_01 > div,.schedule_mod_02 > div{
+    /*border:1px solid red;*/
+
+    /*外觀大小*/   
+    border-radius: 15px;
+        
+    /*外觀視覺*/   
+    background-color:white;
+    box-shadow:3px 3px 10px silver;
+    
+    /*內部文字*/ 
+    
+    /*位移空格*/ 
+    padding:10px 15px;
+    margin-top:10px;  
+}
+
+/*學習領域*/
+.my_schdule_table{
+
+}
+.my_schdule_table > thead > tr > th{
+    /*border:1px solid red;*/
+    /*外觀大小*/   
+        
+    /*外觀視覺*/   
+    
+    /*內部文字*/ 
+    line-height:50px;
+    text-align:center;
+    font-size:19px;
+    
+    /*位移空格*/   
+}
+.my_schdule_table > thead > tr > th:first-child{
+    /*border:1px solid red;*/
+    /*外觀大小*/   
+        
+    /*外觀視覺*/   
+    
+    /*內部文字*/ 
+    line-height:25px;
+    text-align:right;
+    font-size:16px;
+    
+    /*位移空格*/   
+}
+
+.my_schdule_table > tbody > tr{
+    height:50px;
+}
+
+.my_schdule_table > tbody > tr > td{
+    /*border:1px solid red;*/
+    /*外觀大小*/   
+        
+    /*外觀視覺*/   
+    
+    /*內部文字*/  
+    line-height:23px;
+    font-weight:bold;
+    text-align:center;
+    
+    /*位移空格*/   
+    margin:5px; 
+    padding-left:3px;
+    padding-right:3px;
+
+    position: relative;
+}
+.my_schdule_table > tbody > tr > td:first-child{
+    /*border:1px solid red;*/
+    /*外觀大小*/   
+        
+    /*外觀視覺*/   
+    
+    /*內部文字*/  
+    
+    /*位移空格*/   
+}
+
+.my_schdule_table_rowcolor1{background:#eef0f0}
+.my_schdule_table_rowcolor2{background:#ffffff}
+
+.my_hour{
+    /*border:1px solid red;*/
+    /*外觀大小*/   
+    width:calc(100% - 6px);
+    height:25px;
+        
+    /*外觀視覺*/   
+    background:#fff1ab;
+    color:#e0b12c;
+
+    visibility:collapse;
+    
+    /*內部文字*/ 
+    
+    /*位移空格*/   
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    margin: 0 3px 3px 3px;
+}
+.my_row_sum{
+    height: 30px!important;
+    background: #6ec6c4!important;
+    color: white; 
+}
+.my_row_sum > td{
+    text-align: center!important;  
+}
+
+
+.my_subj_list{
+    /*border:1px solid red;*/    
+    /*外觀大小*/   
+        
+    /*外觀視覺*/   
+    height:45px;
+    
+    /*內部文字*/ 
+    text-align:left;
+    
+    /*位移空格*/   
+    margin-left:5px;
+}
+.btn-chin {
+    color: #fff;
+    background-color: #5cb1b8;
+    border-color: #57a3a9;
+
+    position:relative;
+}
+.btn-chin:hover{
+        background-color: #addade;
+    border-color: #57a3a9;
+}
+
+
+.my_teach_class{
+    /*外觀大小*/ 
+    width:40px;  
+        
+    /*外觀視覺*/ 
+    background:#ffb824;  
+    
+    /*內部文字*/ 
+    font-size:5px;
+
+    /*位移空格*/   
+    position:absolute;
+    padding:0px;
+    
+    top:-10px;left:5px;
+}
+
+.my_teach_subj1{
+    /*外觀大小*/  
+    width:40px;    
+        
+    /*外觀視覺*/ 
+    background:#62c75a;  
+    
+    /*內部文字*/ 
+    font-size:5px;
+
+    /*位移空格*/   
+    position:absolute;
+    padding:0px;
+    
+    bottom:-10px;left:5px;
+}
+ 
+.my_teach_title{
+    /*外觀大小*/  
+    width:75px;    
+        
+    /*外觀視覺*/ 
+    background:#cd53bb;  
+    
+    /*內部文字*/ 
+    font-size:5px;
+
+    /*位移空格*/   
+    position:absolute;
+    padding:0px;
+    
+    top:-10px;right:5px;
+}
+
+
+/*=============================*/
+/*======================要覆蓋bootstrap=======================*/
+.nav{
+    border-width: 0 0 2px 0;
+    border-color: #6aa1d0;
+    border-style: solid;
+}
+/*點選中的tab*/
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    /*color: #fff;*/
+    background-color: #6aa1d0;
+    border-radius: 10px 10px 0 0;
+}
+
+/*未選中的tab*/
+.nav > li > a {
+    /*外觀大小*/   
+    /*width: calc(830px/5);*/
+    width: 235px;
+        
+    /*外觀視覺*/   
+    border-radius: 10px 10px 0 0;
+    /*border: 1px solid #6aa1d0;*/
+    background: #d0e7ee;
+    
+    /*內部文字*/ 
+    font-size:19px;
+    text-align: center;
+    
+    /*位移空格*/   
+}
+.my_tab-content5 {
+    /*background:white;*/
+
+}
+
+
+.my_room_list_tr{
+    height:30px!important;
+    line-height:30px;
+}
+.my_room_list_tr > td{
+    padding:10px!important;
+    text-align:left!important;
+}
+
+.teach_schedule_OO{
+    background:#ffb8b3;
+}
+.teach_schedule_XX{
+    background:silver;
+}
+
+.my_btn{
+    position:relative;
+}
+
+.my_classY{
+    /*外觀大小*/  
+        
+    /*外觀視覺*/ 
+    /*background:#ffb824;*/  
+    
+    /*內部文字*/ 
+    font-size:5px;
+
+    /*位移空格*/   
+    position:absolute;
+    padding:0px;
+    
+    top:0px;left:1px;
+}
+
+.my_classY > div{
+    /*外觀大小*/   
+    width:10px;
+    height:15px;
+        
+    /*外觀視覺*/   
+    background-color:#ffb8b3;
+    
+    /*內部文字*/ 
+    text-align:center;
+    
+    /*位移空格*/   
+    display:inline-block;
+    margin-right:1px;
+}
+
+
+
+.my_classN{
+    /*外觀大小*/  
+        
+    /*外觀視覺*/ 
+    /*background:#ffb824;*/  
+    
+    /*內部文字*/ 
+    font-size:5px;
+
+    /*位移空格*/   
+    position:absolute;
+    padding:0px;
+    
+    top:0px;right:1px;
+}
+
+.my_classN > div{
+    /*外觀大小*/   
+    width:10px;
+    height:15px;
+        
+    /*外觀視覺*/   
+    background-color:#8e8e8e;
+    color:white;
+    
+    /*內部文字*/ 
+    text-align:center;
+    
+    /*位移空格*/   
+    display:inline-block;
+    margin-right:1px;
+}
+
+
+
+.w3-ul > li{
+    background:white;
+    padding:10px 10px 15px 15px!important;
+}
+
+.w3-ul > li > .li_head{
+    font-weight:bold;
+    line-height:45px;
+}
+.w3-ul > li > .li_desc{
+    background:white;
+    margin:15px 0;
+    padding: 5px;
+}
+
+/*圓型數字*/
+.num-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}

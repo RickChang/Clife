@@ -1,0 +1,360 @@
+﻿<div>
+    <div class="row my_grup_title">
+        活動量
+    </div>
+    <div class="container" style="width:100%">
+        <ul class="nav nav-pills">
+            <li style="cursor:pointer" class="active"><a data-toggle="pill" data-target="#menu1">個人活動量</a></li>
+            <li style="cursor:pointer"><a data-toggle="pill" data-target="#menu2">分行活動量</a></li>
+            <li style="cursor:pointer"><a data-toggle="pill" data-target="#menu3">事件對象活動量</a></li>
+        </ul>
+        <div class="row" style="border:#A9A9A9 1px solid;background-color:white">
+            
+
+            <div class="col-md-12">
+                <div class="tab-content">
+                    <div id="menu1" class="tab-pane fade in active" style="padding:10px">
+                        
+                        <div class="row" id="samename_class" style="text-align:center;">
+                            <table id="" class="table table-bordered my_table my_class_table">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:center;">週次</th>
+                                        <th style="text-align:center;"><a ng-click="showA()">輔導</a></th>
+                                        <th style="text-align:center;">會議</th>
+                                        <th style="text-align:center;"><a ng-click="showC()">行政</a></th>
+                                        <th style="text-align:center;"><a ng-click="showOther()">其他</a></th>
+                                        <th style="text-align:center;">合計</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in dataMenu1">
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.a1}}</td>
+                                        <td>{{item.meeting}}</td>
+                                        <td>{{item.c1}}</td>
+                                        <td>{{item.other}}</td>
+                                        <td>{{item.total}}</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot style="color:red">
+                                    <tr>
+                                        <td>合計(hr)</td>
+                                        <td>34.0</td>
+                                        <td>8.0</td>
+                                        <td>4.0</td>
+                                        <td>2.0</td>
+                                        <td>48.0</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div id="menu2" class="tab-pane" style="padding:10px">
+
+                        <div class="row" id="samename_class" style="text-align:center;">
+                            <table id="" class="table table-bordered my_table my_class_table">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:center;">分行</th>
+                                        <th style="text-align:center;"><a ng-click="showA()">輔導</a></th>
+                                        <th style="text-align:center;">會議</th>
+                                        <th style="text-align:center;"><a ng-click="showC()">行政</a></th>
+                                        <th style="text-align:center;"><a ng-click="showOther()">其他</a></th>
+                                        <th style="text-align:center;">合計</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in dataMenu2">
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.a1}}</td>
+                                        <td>{{item.meeting}}</td>
+                                        <td>{{item.c1}}</td>
+                                        <td>{{item.other}}</td>
+                                        <td>{{item.total}}</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot style="color:red">
+                                    <tr>
+                                        <td>合計(hr)</td>
+                                        <td>34.0</td>
+                                        <td>8.0</td>
+                                        <td>4.0</td>
+                                        <td>2.0</td>
+                                        <td>48.0</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div id="menu3" class="tab-pane" style="padding:10px">
+
+                        <div class="row" id="samename_class" style="text-align:center;">
+                            <table id="" class="table table-bordered my_table my_class_table">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:center;">對象</th>
+                                        <th style="text-align:center;"><a ng-click="showA()">輔導</a></th>
+                                        <th style="text-align:center;">會議</th>
+                                        <th style="text-align:center;"><a ng-click="showC()">行政</a></th>
+                                        <th style="text-align:center;"><a ng-click="showOther()">其他</a></th>
+                                        <th style="text-align:center;">合計</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr ng-repeat="item in dataMenu3">
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.a1}}</td>
+                                        <td>{{item.meeting}}</td>
+                                        <td>{{item.c1}}</td>
+                                        <td>{{item.other}}</td>
+                                        <td>{{item.total}}</td>
+                                    </tr>
+                                </tbody>
+
+                                <tfoot style="color:red">
+                                    <tr>
+                                        <td>合計(hr)</td>
+                                        <td>34.0</td>
+                                        <td>8.0</td>
+                                        <td>4.0</td>
+                                        <td>2.0</td>
+                                        <td>48.0</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal fade" id="a_Detail">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content" style="background:#D6ECE8">
+                    <div class="modal-header" style="background:linear-gradient(to bottom,  #7ae2df 0%,#65b2b2 100%)">
+                        <div class="pull-right" id="btnCLOSE" data-dismiss="modal"><img src="img/btn-oran-close.png" style="width:30px; height:30px;margin-bottom:10px;" /></div>
+                        <div class="" id="" style="color:white">
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="modal-body ">
+                        <!-- 基本資料 -->
+                        <div class="row class_mod_01_content">
+                            <div class="container" style="background:white">
+                                <span id="Office_Detail_hint" style="color:red"></span>
+                                <table id="" class="table table-bordered my_table my_class_table">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align:center;">分行</th>
+                                            <th style="text-align:center;">GTD</th>
+                                            <th style="text-align:center;">ITD</th>
+                                            <th style="text-align:center;">FOD</th>
+                                            <th style="text-align:center;">PRP</th>
+                                            <th style="text-align:center;">合計</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr ng-repeat="item in aList">
+                                            <td>{{item.name}}</td>
+                                            <td>{{item.GTD}}</td>
+                                            <td>{{item.ITD}}</td>
+                                            <td>{{item.FOD}}</td>
+                                            <td>{{item.PRP}}</td>
+                                            <td>{{item.total}}</td>
+                                        </tr>
+                                    </tbody>
+
+                                    <tfoot style="color:red">
+                                        <tr>
+                                            <td>合計(hr)</td>
+                                            <td>34.0</td>
+                                            <td>8.0</td>
+                                            <td>4.0</td>
+                                            <td>2.0</td>
+                                            <td>48.0</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="b_Detail">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content" style="background:#D6ECE8">
+                    <div class="modal-header" style="background:linear-gradient(to bottom,  #7ae2df 0%,#65b2b2 100%)">
+                        <div class="pull-right" id="btnCLOSE" data-dismiss="modal"><img src="img/btn-oran-close.png" style="width:30px; height:30px;margin-bottom:10px;" /></div>
+                        <div class="" id="" style="color:white">
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="modal-body ">
+                        <!-- 基本資料 -->
+                        <div class="row class_mod_01_content">
+                            <div class="container" style="background:white">
+                                <span id="Office_Detail_hint" style="color:red"></span>
+                                <table id="" class="table table-bordered my_table my_class_table">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align:center;">分行</th>
+                                            <th style="text-align:center;">GTD</th>
+                                            <th style="text-align:center;">ITD</th>
+                                            <th style="text-align:center;">FOD</th>
+                                            <th style="text-align:center;">PRP</th>
+                                            <th style="text-align:center;">合計</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr ng-repeat="item in dataMenu3">
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+
+                                    <tfoot style="color:red">
+                                        <tr>
+                                            <td>合計(hr)</td>
+                                            <td>34.0</td>
+                                            <td>8.0</td>
+                                            <td>4.0</td>
+                                            <td>2.0</td>
+                                            <td>48.0</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="c_Detail">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content" style="background:#D6ECE8">
+                    <div class="modal-header" style="background:linear-gradient(to bottom,  #7ae2df 0%,#65b2b2 100%)">
+                        <div class="pull-right" id="btnCLOSE" data-dismiss="modal"><img src="img/btn-oran-close.png" style="width:30px; height:30px;margin-bottom:10px;" /></div>
+                        <div class="" id="" style="color:white">
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="modal-body ">
+                        <!-- 基本資料 -->
+                        <div class="row class_mod_01_content">
+                            <div class="container" style="background:white">
+                                <span id="Office_Detail_hint" style="color:red"></span>
+                                <table id="" class="table table-bordered my_table my_class_table">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align:center;">分行</th>
+                                            <th style="text-align:center;">新契約</th>
+                                            <th style="text-align:center;">續期</th>
+                                            <th style="text-align:center;">保全</th>
+                                            <th style="text-align:center;">理賠</th>
+                                            <th style="text-align:center;">保戶服務</th>
+                                            <th style="text-align:center;">合計</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr ng-repeat="item in cList">
+                                            <td>{{item.name}}</td>
+                                            <td>{{item.c1}}</td>
+                                            <td>{{item.c2}}</td>
+                                            <td>{{item.c3}}</td>
+                                            <td>{{item.c4}}</td>
+                                            <td>{{item.c5}}</td>
+                                            <td>{{item.total}}</td>
+                                        </tr>
+                                    </tbody>
+
+                                    <tfoot style="color:red">
+                                        <tr>
+                                            <td>合計(hr)</td>
+                                            <td>34.0</td>
+                                            <td>8.0</td>
+                                            <td>4.0</td>
+                                            <td>2.0</td>
+                                            <td>2.0</td>
+                                            <td>48.0</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="d_Detail">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content" style="background:#D6ECE8">
+                    <div class="modal-header" style="background:linear-gradient(to bottom,  #7ae2df 0%,#65b2b2 100%)">
+                        <div class="pull-right" id="btnCLOSE" data-dismiss="modal"><img src="img/btn-oran-close.png" style="width:30px; height:30px;margin-bottom:10px;" /></div>
+                        <div class="" id="" style="color:white">
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="modal-body ">
+                        <!-- 基本資料 -->
+                        <div class="row class_mod_01_content">
+                            <div class="container" style="background:white">
+                                <span id="Office_Detail_hint" style="color:red"></span>
+                                <table id="" class="table table-bordered my_table my_class_table">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align:center;">分行</th>
+                                            <th style="text-align:center;">客說會</th>
+                                            <th style="text-align:center;">其他活動</th>
+                                            <th style="text-align:center;">合計</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr ng-repeat="item in dList">
+                                            <td>{{item.name}}</td>
+                                            <td>{{item.c1}}</td>
+                                            <td>{{item.c2}}</td>
+                                            <td>{{item.total}}</td>
+                                        </tr>
+                                    </tbody>
+
+                                    <tfoot style="color:red">
+                                        <tr>
+                                            <td>合計(hr)</td>
+                                            <td>4.0</td>
+                                            <td>2.0</td>
+                                            <td>48.0</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

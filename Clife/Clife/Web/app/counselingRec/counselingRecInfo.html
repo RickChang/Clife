@@ -1,0 +1,691 @@
+﻿<div>
+    <!--<div class="row my_grup_title">
+        輔導資料紀錄表
+        <img src="img/btn-blue-info.png" style="width:30px; height:30px;margin-left:10px;padding-right:5px;padding-bottom:5px;" />
+    </div>-->
+    <div class="row my_grup_title">
+        <a href="#/" style="text-decoration: underline"><i class="fa fa-home"></i></a> /
+        輔導相關 / 輔導資料紀錄表
+        <img src="img/btn-blue-info.png" style="width:30px; height:30px;margin-left:10px;padding-right:5px;padding-bottom:5px;" />
+    </div>
+    <div class="container" style="width:100%">
+        <ul class="nav nav-pills" ng-model="clickModel">
+            <li style="cursor:pointer" class="active" ng-click="liClick('1')"><a data-toggle="pill" data-target="#menu1" >輔導資料紀錄表</a></li>
+            <li style="cursor:pointer"  ng-click="liClick('2')"><a data-toggle="pill" data-target="#menu2" >興趣及特殊才能調查表</a></li>
+            <li style="cursor:pointer"  ng-click="liClick('3')"><a data-toggle="pill" data-target="#menu3" >輔導訪談紀錄</a></li>
+            <!--<li><a data-toggle="pill" data-target="#menu4">BBBB</a></li>-->
+        </ul>
+        <div class="row" style="border:#A9A9A9 1px solid;background-color:white">
+            <div style="padding:10px">
+                <table >
+                    <tr>
+                        <td width="6%">
+                            <span style="font-size:16px;font-weight:bold;">
+                                學期：
+                            </span>
+                        </td>
+                        <td width="6%" style="text-align:left;">
+                            <select ng-model="modelSemesterYear" class="form-control" style="width:180px;" ng-change="SemesterYearChange(modelSemesterYear)" ng-disabled="true">
+                                <option value=''>請選擇</option>
+                                <option ng-repeat="sel in SemesterYear | orderBy : '-Semester'" value="{{sel.Semester}}">
+                                    {{sel.SemesterName}}
+                                </option>
+                            </select>
+                        </td>
+                        <td style="text-align:right;" width="6%">
+                            <span style="font-size:16px;font-weight:bold;">
+                                年級：
+                            </span>
+                        </td>
+                        <td width="8%">
+                            <select ng-model="modelGrade" class="form-control" style="width:100px;" ng-change="GradeChange(modelSemesterYear, modelGrade)">
+                                <option value=''>請選擇</option>
+                                <option ng-repeat="ClassList in dataClassList | unique: 'grade'" value="{{ClassList.grade}}">
+                                    {{ClassList.chineseGrade}}
+                                </option>
+                            </select>
+                        </td>
+                        <td style="text-align:right;" width="6%">
+                            <span style="font-size:16px;font-weight:bold;">
+                                班級：
+                            </span>
+                        </td>
+                        <td width="10%">
+                            <select ng-model="modelClassNo" class="form-control" style="width:100px;">
+                                <option value=''>請選擇</option>
+                                <option ng-repeat="ClassList in dataClassNoList | unique: 'className'" value="{{ClassList.classNo}}">
+                                    {{ClassList.className}}
+                                </option>
+                            </select>
+                        </td>
+                        <td>
+                            <span class="" style="padding-left:20px">
+                                <button type="button" class="btn btn-success" id="" ng-click="SearchStuList(modelSemesterYear, modelGrade, modelClassNo)">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    查詢
+                                </button>
+                            </span>
+                        </td>
+                        <td ng-style="hiddenCounselingRec" style="text-align:right;">
+                            <input ng-model="saveSemester" ng-show="false" />
+                            <input ng-model="saveSemesterByClick" ng-show="false" />
+                            <input ng-model="saveStudIDNo" ng-show="false" />
+                            <input ng-model="saveGrade" ng-show="false" />
+                            <input ng-model="saveGradeByClick" ng-show="false" />
+                            <input ng-model="saveClassNo" ng-show="false" />
+                            <input ng-model="saveSeatNum" ng-show="false" />
+                            <input ng-model="saveCounselingRecData" ng-show="false" />                            
+                            <input ng-model="saveInterestAbilityData" ng-show="false" />
+                            <input ng-model="saveCounsInterviewData" ng-show="false" />
+                            <button type="button" class="btn btn-default pull-right btn-success" ng-click="update()" ng-style="btnUpdateHidden" >
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                                修改儲存
+                            </button>
+                            <button type="button" class="btn btn-default pull-right btn-success" ng-click="add()" data-backdrop="static" ng-style="btnAddHidden">
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                                新增儲存
+                            </button>    
+                            <button type="button" class="btn btn-default pull-right btn-success" ng-click="updateInterestAbility()" data-backdrop="static" ng-style="btnUpdateInterestAbilityHidden">
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                                修改儲存
+                            </button>
+                            <button type="button" class="btn btn-default pull-right btn-success" ng-click="addInterestAbility()" data-backdrop="static" ng-style="btnAddInterestAbilityHidden">
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                                新增儲存
+                            </button>    
+                            <button type="button" class="btn btn-default pull-right btn-success" data-toggle="modal" data-target="#modCounsInterview" data-backdrop="static" ng-click="EditDetail('add','')" ng-style="btnAddCounsInterviewHidden">
+                                <i class="fa fa-plus" aria-hidden="true"></i>新增
+                            </button>                  
+                        </td>
+                    </tr>
+                </table>
+                <div id="Office_list_hint" style="color:red"></div>
+                <div id="alert_save" style="color:red;float:right; " ng-style="hiddenCounselingRec" ></div> 
+                <hr>
+            </div>
+            <div class="col-md-2">
+                <div class="info-maskName">
+                    <p class="info-textName">
+                        {{watermarkList}}<br /><br /><br /><br />{{watermarkList}}<br /><br /><br /><br />{{watermarkList}}<br /><br /><br /><br />{{watermarkList}}
+                    </p>
+                </div>
+                <div class="tab-content info-opacity" style="padding-top:10px;position:relative;">
+                    <div class="panel panel-default " ng-style="hiddenStudentList">
+                        <div class="panel-heading" style="background-color: #E3F9F5;">
+                            <h3 class="panel-title">學生姓名</h3>
+                        </div>
+                        <ul class="list-group" style="max-height:400px;overflow-y:auto;" ng-model="clickStu">
+                            <li id="StuItem{{$index+1}}" ng-repeat="Student in StudentList | unique: 'SeatNum'" class="list-group-item StuNormal" style="font-size:16px;cursor:pointer" ng-click="StudentDetail(Student.StudIDNo, Student.SeatNum,$index)"><span>{{Student.SeatNum}}.</span>{{Student.StudName}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
+            <div class="info-maskTabTableRight">
+                <p class="info-text">
+                    {{watermark}}<br /><br /><br /><br />{{watermark}}<br /><br /><br /><br />{{watermark}}
+                </p>
+            </div>  
+            <div class="col-md-10">
+                <div class="tab-content" style="background:">
+                    <div id="menu1" class="tab-pane fade in active" style="padding:10px" ng-style="hiddenCounselingRec">                        
+                        <ul class="list-group"  ng-model="clickGrade">
+                            <li id="GradeItem{{Grades.GradeID}}" ng-repeat="Grades in dataGrade" class="list-group2-item GradeNormal" 
+                                style="font-size:16px;cursor:pointer" 
+                                ng-click="GradeClick(Grades.GradeID)" ng-class="{'list-group2-item GradeActive' : Grades.GradeID == iniGrade}">
+                                <span>{{Grades.GradeName}}</span>
+                            </li>
+                        </ul>
+                        <!--輔導資料紀錄表-->
+                        <table class="tg table table-bordered table-hover table-striped" style="table-layout: fixed; width: 584px">
+                            <colgroup>
+                                <col style="width: 200px">
+                                <col style="width: 560px">
+                            </colgroup>
+                            <tr>
+                                <!-- 學前教育 Kindergarten -->
+                                <td class="tg-031e">學前教育</td>
+                                <td class="tg-031e">                                      
+                                    
+                                    <div style="display: inline-block;">
+                                        <input type="radio" ng-model="Kindergarten" name="Kindergarten" value="0" style="zoom:1.2" ng-click="KindergartenClick()"> 01.未曾進幼稚園 &nbsp;&nbsp;&nbsp;                                                
+                                        <input type="radio" ng-model="Kindergarten" name="Kindergarten" value="1" style="zoom:1.2"> 02.曾進幼稚園 
+                                        <input type="text" class="form-control2" style="width:50px;" ng-model="KindergartenYears" maxlength="1" />&nbsp;年
+                                        
+                                    </div>                   
+                                </td>
+                            </tr>
+                            <tr><!-- 父母關係 ParentsRelation 25 -->
+                                <td class="tg-031e">父母關係</td>
+                                <td class="tg-031e">
+                                   <div ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '25' }" style="display: inline-block;" >
+                                        <input type="radio" name="ParentsRelation"  value="{{GeneralCode.codeId}}" 
+                                               style="zoom:1.2" ng-model="ParentsRelation" ng-click="ParentsRelationClick(GeneralCode.codeId,GeneralCode.codeName)"> 
+                                       {{GeneralCode.codeId}}.{{GeneralCode.codeName}} &nbsp;&nbsp;&nbsp;
+                                    </div><br />
+                                    <span ng-style="hiddenParentsRelationElse">其他：</span><input type="text" class="form-control2" style="width:220px;" ng-model="ParentsRelationElse" ng-style="hiddenParentsRelationElse" />
+                                    
+                                </td>                                
+                            </tr>
+                            <tr><!-- 家庭氣氛 FamiAtmosphere 26 -->
+                                <td class="tg-031e">家庭氣氛</td>
+                                <td class="tg-031e">
+                                    <div ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '26' }" style="display: inline-block;">
+                                        
+                                        <input type="radio" ng-model="FamiAtmosphere" name="FamiAtmosphere2" value="{{GeneralCode.codeId}}"
+                                               style="zoom:1.2" ng-click="FamiAtmosphereClick(GeneralCode.codeId,GeneralCode.codeName)"> {{GeneralCode.codeId}}.{{GeneralCode.codeName}} &nbsp;&nbsp;                                        
+                                    </div>
+                                   
+                                </td>                                
+                            </tr>
+                            <tr> <!-- 父管教方式 DadDiscipline 27-->
+                                <td class="tg-031e">父管教方式</td>
+                                <td class="tg-031e">
+                                    <div ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '27' }" style="display: inline-block;">
+                                        <input type="radio" ng-model="DadDiscipline" name="DadDiscipline" value="{{GeneralCode.codeId}}" 
+                                               style="zoom:1.2" ng-click="DadDisciplineClick(GeneralCode.codeId,GeneralCode.codeName)"> {{GeneralCode.codeId}}.{{GeneralCode.codeName}} &nbsp;&nbsp;                                        
+                                    </div>
+                                   
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- 母管教方式 MomDiscipline 27-->
+                                <td class="tg-031e">母管教方式</td>
+                                <td class="tg-031e">
+                                    <div ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '27' }" style="display: inline-block;">
+                                        <input type="radio" ng-model="MomDiscipline" name="MomDiscipline" value="{{GeneralCode.codeId}}" 
+                                               style="zoom:1.2" ng-click="MomDisciplineClick(GeneralCode.codeId,GeneralCode.codeName)"> {{GeneralCode.codeId}}.{{GeneralCode.codeName}} &nbsp;&nbsp;
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            <tr><!-- 居住環境 LivingEnv 40-->
+                                <td class="tg-031e">居住環境</td>
+                                <td class="tg-031e">
+                                    
+                                    <div class="btn-group" data-toggle="buttons-radio">
+                                        <companies ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '40' }">
+                                            <button type="button" class="btn" ng-model="LivingEnv" btn-radio="GeneralCode.codeName"
+                                                    ng-click="LivingEnvClick(GeneralCode.codeId,GeneralCode.codeName)"
+                                                    ng-class="getLivingEnvClass(GeneralCode.codeId)">
+                                                {{GeneralCode.codeId}}.{{GeneralCode.codeName}}
+                                            </button>
+                                        </companies>
+                                    </div>
+                                    <span ng-style="hiddenLivingEnvElse">其他：</span>
+                                    <input type="text" class="form-control2" style="width:220px;" ng-model="LivingEnvElse" ng-style="hiddenLivingEnvElse" ng-show="LivingEnvShow" />
+                                    
+                                </td>
+                            </tr>
+                            <tr><!-- 本人住宿(居住情形) Living 28-->
+                                <td class="tg-yw4l">本人住宿(居住情形)</td>
+                                <td class="tg-yw4l">
+                                                                       
+                                    <div class="btn-group" data-toggle="buttons-radio">
+                                        <companies ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '28' }">
+                                            <button type="button" class="btn" ng-model="Living" btn-radio="GeneralCode.codeName"
+                                                    ng-click="LivingClick(GeneralCode.codeId,GeneralCode.codeName)"
+                                                    ng-class="getLivingClass(GeneralCode.codeId)" >
+                                                {{GeneralCode.codeId}}.{{GeneralCode.codeName}}
+                                            </button>
+                                        </companies>
+                                    </div><br />
+                                    <span ng-style="hiddenLivingElse">其他：</span> 
+                                    <input type="text" class="form-control2" style="width:220px;" ng-model="LivingElse" ng-style="hiddenLivingElse" ng-show="LivingShow" />
+                                    
+                                </td>
+                            </tr>
+                            <tr><!-- 經濟環境 EconomicSitu 29-->
+                                <td class="tg-yw4l">經濟環境</td>
+                                <td class="tg-yw4l">
+                                    <div ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '29' }" style="display: inline-block;">
+                                        <input type="radio" ng-model="EconomicSitu" name="EconomicSitu" value="{{GeneralCode.codeId}}" 
+                                               style="zoom:1.2" ng-click="EconomicSituClick(GeneralCode.codeId,GeneralCode.codeName)"> {{GeneralCode.codeId}}.{{GeneralCode.codeName}} &nbsp;&nbsp;
+                                    </div>                                    
+                                </td>
+                            </tr>
+                            <tr><!-- 喜歡的科目(至少選三項) FavoriteSubj 30-->
+                                <td class="tg-031e"><span style="color:red;">*</span>喜歡的科目(至少選三項)</td>
+                                <td class="tg-031e">                                    
+                                    <div class="btn-group" data-toggle="buttons-radio" ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '30' }">                                        
+                                        <button type="button"  class="btn" ng-model="FavoriteSubj" btn-radio="GeneralCode.codeId" 
+                                                data-ng-click="FavoriteSubjClick(GeneralCode.codeId,GeneralCode.codeName)"  
+                                                ng-class="getFavoriteSubjClass(GeneralCode.codeId)" >  <!-- data-ng-class="{'btn active': GeneralCode.codeId == '02' }"--> <!--[{'btn active': GeneralCode.codeId == '01' ||  GeneralCode.codeId == '02'}]--> <!--[{'btn active': GeneralCode.codeId == '01'},{'btn active': GeneralCode.codeId == '02'}]-->
+                                        {{GeneralCode.codeId}}.{{GeneralCode.codeName}}</button>
+                                    </div> 
+                                    <div id="alert_FavoriteSubj" style="color:red"></div>
+                                </td>
+                            </tr>
+                            <tr><!-- 感到困難的科目(至少選三項) DifficultSubj 30-->
+                                <td class="tg-031e"><span style="color:red;">*</span>感到困難的科目(至少選三項)</td>
+                                <td class="tg-031e">
+                                   
+                                    <div class="btn-group" data-toggle="buttons-radio">
+                                        <companies ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '30' }">
+                                            <button type="button" class="btn" ng-model="DifficultSubj" btn-radio="GeneralCode.codeName" 
+                                                    ng-click="DifficultSubjClick(GeneralCode.codeId,GeneralCode.codeName)"
+                                                    ng-class="getDifficultSubjClass(GeneralCode.codeId)">
+                                            {{GeneralCode.codeId}}.{{GeneralCode.codeName}}</button>
+                                        </companies>
+                                    </div> 
+                                    <div id="alert_DifficultSubj" style="color:red"></div>
+                                </td>
+                            </tr>
+                            <tr><!-- 特殊才能 Talent(至多選三項) Talent 31-->
+                                <td class="tg-031e">特殊才能(至多選三項)</td>
+                                <td class="tg-031e">
+                                    
+                                    <div class="btn-group" data-toggle="buttons-radio" >
+                                        <companies ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '31' }">
+                                            <button type="button" class="btn" ng-model="Talent" btn-radio="GeneralCode.codeName" 
+                                                    ng-click="TalentClick(GeneralCode.codeId,GeneralCode.codeName)"
+                                                    ng-class="getTalentClass(GeneralCode.codeId)">
+                                            {{GeneralCode.codeId}}.{{GeneralCode.codeName}}</button>
+                                        </companies>
+                                    </div>
+                                    <span ng-style="hiddenTalentMartialArts">武術：</span><input type="text" class="form-control2" style="width:220px;" ng-model="TalentMartialArts" ng-style="hiddenTalentMartialArts" ng-show="TalentMartialArtsShow" />
+                                    <br ng-style="hiddenTalentMusical" />
+                                    <span ng-style="hiddenTalentMusical">樂器演奏：</span><input type="text" class="form-control2" style="width:220px;" ng-model="TalentMusical" ng-style="hiddenTalentMusical" ng-show="TalentMusicalShow" />
+                                    <br ng-style="hiddenTalentElse" />
+                                    <span ng-style="hiddenTalentElse">其他：</span><input type="text" class="form-control2" style="width:220px;" ng-model="TalentElse" ng-style="hiddenTalentElse" ng-show="TalentElseShow" />
+                                    <div id="alert_Talent" style="color:red"></div>
+                                </td>
+                            </tr>
+                            <tr><!-- 休閒興趣 (至多選三項) Recreation 32-->
+                                <td class="tg-031e">休閒興趣 (至多選三項) </td>
+                                <td class="tg-031e">
+                                    
+                                    <div class="btn-group" data-toggle="buttons-radio">
+                                        <companies ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '32' }">
+                                            <button type="button" class="btn" ng-model="Recreation" btn-radio="GeneralCode.codeName"
+                                                    ng-click="RecreationClick(GeneralCode.codeId,GeneralCode.codeName)"
+                                                    ng-class="getRecreationClass(GeneralCode.codeId)">
+                                                {{GeneralCode.codeId}}.{{GeneralCode.codeName}}
+                                            </button>
+                                        </companies>
+                                    </div><br />
+                                    <span ng-style="hiddenRecreationElse">其他：</span><input type="text" class="form-control2" style="width:220px;" ng-model="RecreationElse" ng-style="hiddenRecreationElse" ng-show="RecreationShow" />
+                                    <div id="alert_Recreation" style="color:red"></div>
+                                </td>
+                            </tr>
+                            <tr><!-- 校內或班內職務 ClassOfficer -->
+                                <td class="tg-yw4l">校內或班內職務</td>
+                                <td class="tg-yw4l">
+                                    <input type="text" class="form-control" ng-model="ClassOfficer" maxlength="20" />
+                                </td>
+                            </tr>
+                            <tr><!-- 生活習慣 LifeStyle 33-->
+                                <td class="tg-yw4l">生活習慣</td>
+                                <td class="tg-yw4l">
+                                    <div ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '33' }" style="display: inline-block;">
+                                        <input type="radio" ng-model="LifeStyle" name="FamiAtmosphere" value="{{GeneralCode.codeId}}" 
+                                               style="zoom:1.2" ng-click="LifeStyleClick(GeneralCode.codeId,GeneralCode.codeName)"> {{GeneralCode.codeId}}.{{GeneralCode.codeName}} &nbsp;&nbsp;
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            <tr><!-- 人際關係 PersonalRel 34-->
+                                <td class="tg-031e">人際關係</td>
+                                <td class="tg-031e">
+                                    <div ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '34' }" style="display: inline-block;">
+                                        <input type="radio" ng-model="PersonalRel" name="PersonalRel" value="{{GeneralCode.codeId}}" 
+                                               style="zoom:1.2"  ng-click="PersonalRelClick(GeneralCode.codeId,GeneralCode.codeName)"> {{GeneralCode.codeId}}.{{GeneralCode.codeName}} &nbsp;&nbsp;
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            <tr><!-- 外向行為 ExBehavior 35-->
+                                <td class="tg-031e">外向行為</td>
+                                <td class="tg-031e">
+                                    <div ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '35' }" style="display: inline-block;">
+                                        <input type="radio" ng-model="ExBehavior" name="ExBehavior" value="{{GeneralCode.codeId}}" 
+                                               style="zoom:1.2" ng-click="ExBehaviorClick(GeneralCode.codeId,GeneralCode.codeName)"> {{GeneralCode.codeId}}.{{GeneralCode.codeName}} &nbsp;&nbsp;
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            <tr><!-- 內向行為 InBehavior 36-->
+                                <td class="tg-031e">內向行為</td>
+                                <td class="tg-031e">
+                                    <div ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '36' }" style="display: inline-block;">
+                                        <input type="radio" ng-model="InBehavior" name="InBehavior" value="{{GeneralCode.codeId}}" 
+                                               style="zoom:1.2" ng-click="InBehaviorClick(GeneralCode.codeId,GeneralCode.codeName)"> {{GeneralCode.codeId}}.{{GeneralCode.codeName}} &nbsp;&nbsp;
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            <tr><!-- 學習行為 LearnBehavior 37-->
+                                <td class="tg-yw4l">學習行為</td>
+                                <td class="tg-yw4l">
+                                    <div ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '37' }" style="display: inline-block;">
+                                        <input type="radio" ng-model="LearnBehavior"  name="LearnBehavior" value="{{GeneralCode.codeId}}" 
+                                               style="zoom:1.2" ng-click="LearnBehaviorClick(GeneralCode.codeId,GeneralCode.codeName)"> {{GeneralCode.codeId}}.{{GeneralCode.codeName}} &nbsp;&nbsp;
+                                    </div>
+                                </td>
+                            </tr>        
+                            <tr><!-- 不良習慣 BadHabit 38-->
+                                <td class="tg-031e">不良習慣</td>
+                                <td class="tg-031e">
+                                    <div ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '38' }" style="display: inline-block;">
+                                        <input type="radio" ng-model="BadHabit" name="BadHabit" value="{{GeneralCode.codeId}}" 
+                                               style="zoom:1.2" ng-click="BadHabitClick(GeneralCode.codeId,GeneralCode.codeName)"> {{GeneralCode.codeId}}.{{GeneralCode.codeName}} &nbsp;&nbsp;
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr><!-- 焦慮症狀 Nervous 39-->
+                                <td class="tg-031e">焦慮症狀</td>
+                                <td class="tg-031e">
+                                    <div ng-repeat="GeneralCode in dataGeneralCode | filter: { codeCat: '39' }" style="display: inline-block;">
+                                        <input type="radio" ng-model="Nervous" name="Nervous" value="{{GeneralCode.codeId}}" 
+                                               style="zoom:1.2" ng-click="NervousClick(GeneralCode.codeId,GeneralCode.codeName)"> {{GeneralCode.codeId}}.{{GeneralCode.codeName}} &nbsp;&nbsp;
+                                    </div>
+                                </td>
+                            </tr>                    
+                        </table>
+
+                    </div>
+                    <div id="menu2" class="tab-pane fade" style="padding:10px" ng-style="hiddenInterestAbility">
+                        <!--興趣及特殊才能調查表-->
+                        <ul class="list-group" ng-model="clickGrade">
+                            <li id="GradeItem{{Grades.GradeID}}" ng-repeat="Grades in dataGrade" class="list-group2-item GradeNormal"
+                                style="font-size:16px;cursor:pointer"
+                                ng-click="GradeClick(Grades.GradeID)" ng-class="{'list-group2-item GradeActive' : Grades.GradeID == iniGrade}">
+                                <span>{{Grades.GradeName}}</span>
+                            </li>
+                        </ul>
+                        <table class="tg table table-bordered table-hover table-striped" style="undefined;table-layout: fixed; width: 584px">
+                            <colgroup>
+                                <col style="width: 200px">
+                                <col style="width: 560px">
+                            </colgroup>
+                            <tr>
+                                <!-- 興趣或專長 InterestSkill -->
+                                <td class="tg-yw4l">興趣或專長</td>
+                                <td class="tg-yw4l">
+                                    <textarea rows="5" type="text" class="form-control" ng-model="InterestSkill" maxlength="500" ></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- 曾修習才能 StudAbility -->
+                                <td class="tg-yw4l">曾修習才能</td>
+                                <td class="tg-yw4l">
+                                    <textarea rows="5" type="text" class="form-control" ng-model="StudAbility" maxlength="500" ></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- 導師意見 TeaOpinion -->
+                                <td class="tg-yw4l">導師意見</td>
+                                <td class="tg-yw4l">
+                                    <textarea rows="5" type="text" class="form-control" ng-model="TeaOpinion" maxlength="500"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- 校內或班內職務 GroupAct -->
+                                <td class="tg-yw4l">分組活動參加項目</td>
+                                <td class="tg-yw4l">
+                                    <textarea rows="5" type="text" class="form-control" ng-model="GroupAct" maxlength="500"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="menu3" class="tab-pane fade" style="padding:10px" ng-style="hiddenCounsInterview">                                      
+                        <div id="Office_list_hint_CounsInterview" style="color:red"></div>        
+                        <div class="row" id="samename_class" ng-style="tableCounsInterviewHidden">                                                                             
+                            <table id="" class="table table-bordered my_table my_class_table" style="position:relative;">
+                                <thead>
+                                    <tr>
+                                        <th>學期</th>
+                                        <th>訪談日期</th>
+                                        <th>訪談方式</th>
+                                        <th>訪談對象</th>
+                                        <th>聯絡事項</th>
+                                        <th>紀錄者</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="info-opacity">
+                                    <tr ng-repeat="item in dataCounsInterview.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                                        <td>{{item.	SemesterName}}</td>
+                                        <td>{{item.	InterviewDate}}</td>
+                                        <td>{{item.	InterviewTypeName}}</td>
+                                        <td>{{item.	Interviewer}}</td>
+                                        <td>{{item.	CounsThing}}</td>
+                                        <td>{{item.	TeaIDNo}}</td>
+
+                                        <td style="width:170px;">
+                                            <button type="button" class="btn btn-default pull-right btn-warning" ng-click="DelDetail(item.CounsInterID,item.Semester)">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i> 刪除
+                                            </button>
+                                            <button type="button" class="btn btn-default pull-right btn-success" data-toggle="modal" data-backdrop="static" data-target="#modCounsInterview" style="margin-right:5px;" ng-click="EditDetail(item.CounsInterID,item.StudIDNo,item.Semester)">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i> 修改
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="widget-foot">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td style="width: 50%" colspan="3">
+                                            每頁顯示
+                                            <select ng-model="viewby" ng-change="setItemsPerPage(viewby)">
+                                                <option>10</option>
+                                                <option>20</option>
+                                                <option>30</option>
+                                            </select>
+                                            筆
+                                        </td>
+                                        <td style="width: 50%; text-align: right" colspan="3">
+                                            <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" items-per-page="itemsPerPage"></uib-pagination>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div id="menu4" class="tab-pane fade" style="padding:10px">
+                    </div>-->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- 新增確認畫面 -->
+<div class="modal fade" id="Office_Detail_confirm">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content" style="background:rgb(138, 192, 192)">
+            <div class="clearfix"></div>
+            <div class="modal-body">
+                <div style="padding-left:55px" id="Office_Detail_confirm_hint" class="class_mod_01_header"></div>
+                <button type="button" class="btn btn-default btn-success" style="margin-top:25px;margin-left:90px" data-dismiss="modal">
+                    <i class="fa fa-check" aria-hidden="true"></i> 確定
+                </button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 編輯確認畫面 -->
+<div class="modal fade" id="Office_Detail_Update_confirm">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content" style="background:rgb(138, 192, 192)">
+            <div class="clearfix"></div>
+            <div class="modal-body">
+                <!--<div class="pull-right" id="" data-dismiss="modal"><img src="img/btn-oran-close.png" style="width:30px; height:30px;margin-bottom:10px;" /></div>-->
+                <div style="padding-left:55px" id="Office_Detail_Update_hint" class="class_mod_01_header"></div>
+                <button type="button" class="btn btn-default btn-success" style="margin-top:25px;margin-left:90px" data-dismiss="modal">
+                    <i class="fa fa-check" aria-hidden="true"></i> 確定
+                </button>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 刪除確認畫面 -->
+<div class="modal fade" id="Office_Detail_Delete">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content" style="background:rgb(138, 192, 192)">
+            <div class="clearfix"></div>
+            <div class="modal-body">
+                <div class="pull-right" id="" data-dismiss="modal"><img src="img/btn-oran-close.png" style="width:30px; height:30px;margin-bottom:10px;" /></div>
+                <div class="class_mod_01_header">確定要刪除?</div>
+                <span id="counsInterview_delete_CounsInterID" class="widget-test"></span>
+                <span id="counsInterview_delete_Semester" class="widget-test"></span>
+                <div style="float:left;padding-bottom:10px">
+                    <div style="float:left;">
+                        <button type="button" class="btn btn-default pull-right btn-success" style="margin-top:25px;margin-right:60px;margin-left: 30px" ng-click="DeleteOffice_Confirm()">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i> 確定
+                        </button>
+                    </div>
+                    <div style="float:left;">
+                        <button type="button" class="btn btn-default pull-right btn-warning" data-dismiss="modal" style="margin-top:25px;">
+                            <i class='fa fa-times' aria-hidden='true'></i> 取消
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 錯誤確認畫面 -->
+<div class="modal fade" id="Error_confirm">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content" style="background:rgb(138, 192, 192)">
+            <div class="clearfix"></div>
+            <div class="modal-body">
+                <div class="pull-left" id="" >
+                    <img src="img/ERROR.png" style="width:60px; height:60px;" />
+                </div>
+                <div style="text-align:center" id="Error_hint" class="class_mod_01_header"></div>
+                <button type="button" class="btn btn-default btn-success" style="margin-top:25px;margin-left:45px" data-dismiss="modal">
+                    <i class="fa fa-check" aria-hidden="true"></i> 確定
+                </button>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 新增編輯畫面 -->
+<div class="modal fade" id="modCounsInterview" ng-style="btnCLOSE">
+    <div class="modal-dialog modal-md" style="width:900px;">
+        <div class="modal-content" style="background:#D6ECE8; ">
+            <div class="modal-header" style="background:linear-gradient(to bottom,  #7ae2df 0%,#65b2b2 100%)">
+                <div class="pull-right" id="btnCLOSE" data-dismiss="modal"><img src="img/btn-oran-close.png" style="width:30px; height:30px;margin-bottom:10px;" /></div>
+                <div class="" id="" style="color:white">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    輔導訪談紀錄
+                    <span id="" ng-style="AddHidden">-新增</span>&nbsp;
+                    <span id="" ng-style="UpdateHidden">-編輯</span>&nbsp;
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="modal-body ">
+                <!-- 基本資料 -->
+                <div class="row class_mod_01_content">
+                    <div class="container">                        
+                        <div style="background-color:#FFF;padding:10px;margin-bottom:5px;">
+                            <span id="Office_Detail_hint" style="color:red"></span>
+                            <!--<table class="table table-bordered my_table my_class_table">  -->
+                            <div class="info-maskTab">
+                                <p class="info-textTabTableEdit">
+                                    {{watermarkDiv}}<br /><br /><br /><br /><br /><br /><br /><br />
+                                    {{watermarkDiv}}<br /><br /><br /><br /><br /><br /><br /><br />
+                                    {{watermarkDiv}}
+                                </p>
+                            </div>
+                                <table class="table table-bordered my_table dennis_table table-striped info-opacity"  style="position:relative;">                                    
+                                    <tr>
+                                        <th width="15%"><span style="color:red;">*</span>訪談日期</th>
+                                        <td width="35%">
+                                            <input type="text" class="form-control form_date" ng-model="InterviewDate" data-max-date="{{InterviewMaxDate}}" placeholder="輸入訪談日期" data-autoclose="1" data-date-format="yyyy/MM/dd" bs-datepicker>
+
+                                        </td>
+                                        <th width="15%">訪談對象</th>
+                                        <td width="35%">
+                                            <input class="form-control" type="text" ng-model="Interviewer" maxlength="20">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>訪談方式</th>
+                                        <td colspan="3">
+                                            <div  ng-repeat="itemCode in dataCodeCounseling | filter: { CodeType: '0' }" style="display: inline-block;">
+                                                <input type="radio" name="InterviewTypeRadio" value="{{itemCode.CodeID}}"
+                                                       style="zoom:1.2" ng-model="InterviewType"
+                                                       ng-click="CodeCounselingClick(itemCode.CodeID)">
+                                                {{itemCode.CodeName}} &nbsp;&nbsp;&nbsp;
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>聯絡事項</th>
+                                        <td colspan="3">
+                                            <input class="form-control" type="text" ng-model="CounsThing" maxlength="50">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>內容要點</th>
+                                        <td colspan="3">
+                                            <textarea rows="4" type="text" class="form-control" ng-model="CounsContent"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>轉介輔導室</th>
+                                        <td style="vertical-align:top;">
+                                            <input type="checkbox" ng-model="HandoverCouns" style="zoom:2;" ng-disabled="HandoverCounsDisabled"><span>是否提交輔導室</span>
+                                        </td>
+                                        <th>轉介說明</th>
+                                        <td>
+                                            <textarea rows="3" class="form-control" type="text" ng-model="HandoverDes" maxlength="800"></textarea>
+                                        </td>
+                                    <tr ng-style="AcceptHidden">
+                                        <th>是否受理</th>
+                                        <td>
+                                            <label>{{IsAccept}}</label>
+                                            <!--<input class="form-control" type="text" ng-model="IsAccept" ng-disabled="true">-->
+                                        </td>
+                                        <th>受理說明</th>
+                                        <td>
+                                            <label>{{AcceptReason}}</label>
+                                            <!--<textarea rows="3" class="form-control" type="text" ng-model="AcceptReason" ng-disabled="true"></textarea>-->
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <span id="UpdateCounsInterID" class="widget-test"></span>
+                <span id="UpdateSemester" class="widget-test"></span>
+                <button type="button" class="btn btn-default pull-right btn-success" ng-model="UpdateValue" ng-click="CounsInterviewUpdate(UpdateCounsInterID,UpdateSemester)" ng-style="UpdateHidden">
+                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                    修改儲存
+                </button>
+                <button type="button" class="btn btn-default pull-right btn-success" ng-click="CounsInterviewInsert()" ng-style="AddHidden">
+                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                    新增儲存
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn {
+    margin-right:3px;
+    margin-bottom:3px;
+    /*border-radius: 5px;
+    border: 2px solid white;*/
+    }
+
+</style>

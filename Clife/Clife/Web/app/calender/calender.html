@@ -1,0 +1,579 @@
+﻿<div>
+    <div class="row my_grup_title">
+        行事曆
+    </div>
+
+
+    <div class="container" style="width:100%">
+        <div class="row col-md-10">
+            <div>
+                <div class="col-md-4">
+                    <select id="" class="form-control" style="width:200px;display:inline-block;margin:5px;" ng-model="sltMonth" ng-options="item.date for item in dates" ng-change="dateChange()">
+                        <option value="">請選擇</option>
+                    </select>
+                    
+                </div>
+                <div class="col-md-4">
+                    <select id="" class="form-control" style="width:200px;display:inline-block;margin:5px;" ng-model="sltWeek" ng-options="item.week for item in weeks" ng-style="sltWeekCss">
+                        <option value="">請選擇</option>
+                    </select>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+        <div class="row col-md-10">
+            <img ng-src="./img/{{imgFile}}" />
+            <div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-success" id="" ng-click="addEvent()">
+                        新增事件
+                    </button>
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-3">
+                    <!--<div style="position:absolute; right:0px">
+
+                    </div>-->
+                    <span class="btn-group">
+                        <button type="button" class="btn" ng-class="monthCss" ng-click="switchTime(1)" id="lblDistrictName">月</button>
+                        <button type="button" class="btn" ng-class="weekCss" ng-click="switchTime(2)" id="lblSchoolName">週</button>
+                        <button type="button" class="btn" ng-class="dayCss" ng-click="switchTime(3)" id="lblSchoolName">日</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="event_Detail">
+            <div class="modal-dialog modal-md" style="width: 900px;">
+                <div class="modal-content" style="background:#D6ECE8">
+                    <div class="modal-header" style="background:linear-gradient(to bottom,  #7ae2df 0%,#65b2b2 100%)">
+                        <div class="pull-right" id="btnCLOSE" data-dismiss="modal"><img src="img/btn-oran-close.png" style="width:30px; height:30px;margin-bottom:10px;" /></div>
+                        <div class="" id="" style="color:white">
+                            <button type="button" class="btn btn-default pull-right btn-success">
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                                確定新增
+                            </button>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="modal-body ">
+                        <!-- 基本資料 -->
+                        <div class="row class_mod_01_content">
+
+                            
+
+                            <div class="container" style="background:white">
+                                
+                                <ul class="nav nav-pills">
+                                    <li style="cursor:pointer;" class="active"><a data-toggle="pill" data-target="#menu1">輔導</a></li>
+                                    <li style="cursor:pointer;"><a data-toggle="pill" data-target="#menu2">會議</a></li>
+                                    <li style="cursor:pointer;"><a data-toggle="pill" data-target="#menu3">行政</a></li>
+                                    <li style="cursor:pointer;"><a data-toggle="pill" data-target="#menu4">其他</a></li>
+                                </ul>
+
+                                <div class="row" style="border:#A9A9A9 1px solid;background-color:white">
+                                    <div class="col-md-12">
+                                        <div class="tab-content">
+                                            <div id="menu1" class="tab-pane fade in active" style="padding:10px">
+                                                <table class="table table-bordered my_table my_class_table" style="margin-top:10px">
+                                                    <tr>
+                                                        <td><span style="color:red">*</span>事件對象</td>
+                                                        <td>
+                                                            <select id="" ng-model="selectA" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listA">
+                                                                <option value="" disabled selected>通路</option>
+                                                            </select>
+                                                            <select id="" ng-model="selectB" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listB">
+                                                                <option value="" disabled selected>分行</option>
+                                                            </select>
+                                                            <select id="" ng-model="selectC" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listC">
+                                                                <option value="" disabled selected>對象</option>
+                                                            </select>
+                                                            <select id="" ng-model="selectD" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listD">
+                                                                <option value="" disabled selected>姓名</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span style="color:red">*</span>輔導事件項目</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <optgroup label="集體訓練GTD">
+                                                                    <option value="1">分會早會</option>
+                                                                    <option value="2">分會夕會</option>
+                                                                    <option value="3">銷售演練</option>
+                                                                    <option value="4">轉介訓練</option>
+                                                                    <option value="5">外勤會議</option>
+                                                                    <option value="6">理專行員專班</option>
+                                                                    <option value="7">區部活力班</option>
+                                                                    <option value="8">區部摩天輪</option>
+                                                                    <option value="9">總行訓練支援</option>
+                                                                </optgroup>
+                                                                <optgroup label="駐點輔導ITD">
+                                                                    <option value="10">商品教育推動</option>
+                                                                    <option value="11">案源討論</option>
+                                                                    <option value="12">需求分析</option>
+                                                                    <option value="13">銷售問題回饋</option>
+                                                                    <option value="14">成功經驗分享</option>
+                                                                    <option value="15">新進理專輔導</option>
+                                                                    <option value="16">銷售演練</option>
+                                                                    <option value="17">保單校正協助</option>
+                                                                </optgroup>
+                                                                <optgroup label="陪同拜訪FOD">
+                                                                    <option value="18" selected>理專陪訪</option>
+                                                                    <option value="19" selected>AO陪訪</option>
+                                                                </optgroup>
+                                                                <optgroup label="績效追蹤PRP">
+                                                                    <option value="20" selected>績效追蹤</option>
+                                                                    <option value="21" selected>獎勵推動</option>
+                                                                </optgroup>
+                                                                <option value="" disabled selected>事件項目</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>商品名稱</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <option value="" disabled selected>商品名稱</option>
+                                                                <option value="1">澳多心</option>
+                                                                <option value="2">飛揚人生</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>開始時間</td>
+                                                        <td>
+                                                            <div class="col-md-4">
+                                                                <input type="text" id="StudentBir" class="form-control form_date emptyinput" placeholder="起始日期" ng-model="dateStart" data-autoclose="1" data-date-format="yyyy-MM-dd" bs-datepicker>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input type="time" class="form-control emptyinput" style="width:150px;height:30px;" placeholder="起始時間" />
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>開始/結束時間</td>
+                                                        <td>
+                                                            <div class="col-md-4">
+                                                                <input type="text" id="StudentBir" class="form-control form_date emptyinput" placeholder="結束日期" ng-model="dateEnd" data-autoclose="1" data-date-format="yyyy-MM-dd" bs-datepicker>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input type="time" class="form-control emptyinput" style="width:150px;height:30px;" placeholder="結束時間" />
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>重複</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <option value="" disabled selected>請選擇</option>
+                                                                <option value="1">每日</option>
+                                                                <option value="2">每週</option>
+                                                                <option value="3">每月</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>提示</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <option value="" disabled selected>請選擇</option>
+                                                                <option value="1">前五分鐘</option>
+                                                                <option value="2">前十分鐘</option>
+                                                                <option value="3">前一小時</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>邀請對象</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <option value="" disabled selected>邀請對象</option>
+                                                                <option value="1" selected>督導</option>
+                                                                <option value="2" selected>經理</option>
+                                                                <option value="3" selected>區部IC</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+
+                                            <div id="menu2" class="tab-pane" style="padding:10px">
+                                                <table class="table table-bordered my_table my_class_table" style="margin-top:10px">
+                                                    <tr>
+                                                        <td><span style="color:red">*</span>事件對象</td>
+                                                        <td>
+                                                            <select id="" ng-model="selectA" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listA">
+                                                                <option value="" disabled selected>通路</option>
+                                                            </select>
+                                                            <select id="" ng-model="selectB" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listB">
+                                                                <option value="" disabled selected>分行</option>
+                                                            </select>
+                                                            <select id="" ng-model="selectC" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listC">
+                                                                <option value="" disabled selected>對象</option>
+                                                            </select>
+                                                            <select id="" ng-model="selectD" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listD">
+                                                                <option value="" disabled selected>姓名</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span style="color:red">*</span>會議事件項目</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <optgroup label="內部會議">
+                                                                    <option value="1" selected>保代部月會</option>
+                                                                    <option value="2" selected>保代部週會</option>
+                                                                    <option value="3" selected>團隊學習</option>
+                                                                    <option value="4" selected>區部IC會議</option>
+                                                                </optgroup>
+                                                                <optgroup label="外部會議">
+                                                                    <option value="5" selected>區部會議</option>
+                                                                    <option value="6" selected>SFA會議</option>
+                                                                </optgroup>
+                                                                <option value="" disabled selected>事件項目</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>開始時間</td>
+                                                        <td>
+                                                            <div class="col-md-4">
+                                                                <input type="text" id="StudentBir" class="form-control form_date emptyinput" placeholder="起始日期" ng-model="dateStart" data-autoclose="1" data-date-format="yyyy-MM-dd" bs-datepicker>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input type="time" class="form-control emptyinput" style="width:150px;height:30px;" placeholder="起始時間" />
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>結束時間</td>
+                                                        <td>
+                                                            <div class="col-md-4">
+                                                                <input type="text" id="StudentBir" class="form-control form_date emptyinput" placeholder="結束日期" ng-model="dateEnd" data-autoclose="1" data-date-format="yyyy-MM-dd" bs-datepicker>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input type="time" class="form-control emptyinput" style="width:150px;height:30px;" placeholder="結束時間" />
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>重複</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <option value="" disabled selected>請選擇</option>
+                                                                <option value="1">每日</option>
+                                                                <option value="2">每週</option>
+                                                                <option value="3">每月</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>提示</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <option value="" disabled selected>請選擇</option>
+                                                                <option value="1">前五分鐘</option>
+                                                                <option value="2">前十分鐘</option>
+                                                                <option value="3">前一小時</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>邀請對象</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <option value="" disabled selected>邀請對象</option>
+                                                                <option value="1" selected>督導</option>
+                                                                <option value="2" selected>經理</option>
+                                                                <option value="3" selected>區部IC</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+
+                                            <div id="menu3" class="tab-pane" style="padding:10px">
+                                                <table class="table table-bordered my_table my_class_table" style="margin-top:10px">
+                                                    <tr>
+                                                        <td><span style="color:red">*</span>事件對象</td>
+                                                        <td>
+                                                            <select id="" ng-model="selectA" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listA">
+                                                                <option value="" disabled selected>通路</option>
+                                                            </select>
+                                                            <select id="" ng-model="selectB" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listB">
+                                                                <option value="" disabled selected>分行</option>
+                                                            </select>
+                                                            <select id="" ng-model="selectC" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listC">
+                                                                <option value="" disabled selected>對象</option>
+                                                            </select>
+                                                            <select id="" ng-model="selectD" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listD">
+                                                                <option value="" disabled selected>姓名</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span style="color:red">*</span>行政事件項目</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <optgroup label="新契約">
+                                                                    <option value="1" selected>請教失敗處理</option>
+                                                                    <option value="2" selected>補全追蹤</option>
+                                                                    <option value="3" selected>簽收回條追蹤</option>
+                                                                    <option value="4" selected>DI協助</option>
+                                                                </optgroup>
+                                                                <optgroup label="續期">
+                                                                    <option value="5" selected>扣款失敗處理</option>
+                                                                    <option value="6" selected>停效件追蹤</option>
+                                                                    <option value="6" selected>墊繳件追蹤</option>
+                                                                </optgroup>
+                                                                <optgroup label="保全">
+                                                                    <option value="5" selected>保全事務處理</option>
+                                                                    <option value="6" selected>應領未領追蹤</option>
+                                                                    <option value="6" selected>滿期商品推動</option>
+                                                                </optgroup>
+                                                                <optgroup label="理賠">
+                                                                    <option value="5" selected>理賠事務處理</option>
+                                                                </optgroup>
+                                                                <optgroup label="保戶服務">
+                                                                    <option value="5" selected>客服單處理</option>
+                                                                    <option value="6" selected>客訴處理</option>
+                                                                </optgroup>
+                                                                <option value="" disabled selected>事件項目</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>開始時間</td>
+                                                        <td>
+                                                            <div class="col-md-4">
+                                                                <input type="text" id="StudentBir" class="form-control form_date emptyinput" placeholder="起始日期" ng-model="dateStart" data-autoclose="1" data-date-format="yyyy-MM-dd" bs-datepicker>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input type="time" class="form-control emptyinput" style="width:150px;height:30px;" placeholder="起始時間" />
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>結束時間</td>
+                                                        <td>
+                                                            <div class="col-md-4">
+                                                                <input type="text" id="StudentBir" class="form-control form_date emptyinput" placeholder="結束日期" ng-model="dateEnd" data-autoclose="1" data-date-format="yyyy-MM-dd" bs-datepicker>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input type="time" class="form-control emptyinput" style="width:150px;height:30px;" placeholder="結束時間" />
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>重複</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <option value="" disabled selected>請選擇</option>
+                                                                <option value="1">每日</option>
+                                                                <option value="2">每週</option>
+                                                                <option value="3">每月</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>提示</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <option value="" disabled selected>請選擇</option>
+                                                                <option value="1">前五分鐘</option>
+                                                                <option value="2">前十分鐘</option>
+                                                                <option value="3">前一小時</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>邀請對象</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <option value="" disabled selected>邀請對象</option>
+                                                                <option value="1" selected>督導</option>
+                                                                <option value="2" selected>經理</option>
+                                                                <option value="3" selected>區部IC</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </table>
+                                            </div>
+
+                                            <div id="menu4" class="tab-pane" style="padding:10px">
+                                                <table class="table table-bordered my_table my_class_table" style="margin-top:10px">
+                                                    <tr>
+                                                        <td><span style="color:red">*</span>事件對象</td>
+                                                        <td>
+                                                            <select id="" ng-model="selectA" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listA">
+                                                                <option value="" disabled selected>通路</option>
+                                                            </select>
+                                                            <select id="" ng-model="selectB" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listB">
+                                                                <option value="" disabled selected>分行</option>
+                                                            </select>
+                                                            <select id="" ng-model="selectC" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listC">
+                                                                <option value="" disabled selected>對象</option>
+                                                            </select>
+                                                            <select id="" ng-model="selectD" class="form-control" style="width:80px;float:left;margin:1px;" ng-options="item.name for item in listD">
+                                                                <option value="" disabled selected>姓名</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span style="color:red">*</span>其他事件項目</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <optgroup label="請假/休假">
+                                                                    <option value="1" selected>特休</option>
+                                                                    <option value="2" selected>公假</option>
+                                                                    <option value="3" selected>事假</option>
+                                                                    <option value="4" selected>病假</option>
+                                                                    <option value="5" selected>事出</option>
+                                                                    <option value="6" selected>病出</option>
+                                                                </optgroup>
+                                                                <optgroup label="客說會">
+                                                                    <option value="7" selected>區部客說會</option>
+                                                                    <option value="8" selected>分行客說會</option>
+                                                                </optgroup>
+                                                                <optgroup label="其他活動">
+                                                                    <option value="9" selected>其他</option>
+                                                                </optgroup>
+                                                                <option value="" disabled selected>事件項目</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>客說會類別</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <option value="" disabled selected>客說會類別</option>
+                                                                <option value="1" selected>退休</option>
+                                                                <option value="2" selected>稅務</option>
+                                                                <option value="3" selected>投資</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>開始時間</td>
+                                                        <td>
+                                                            <div class="col-md-4">
+                                                                <input type="text" id="StudentBir" class="form-control form_date emptyinput" placeholder="起始日期" ng-model="dateStart" data-autoclose="1" data-date-format="yyyy-MM-dd" bs-datepicker>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input type="time" class="form-control emptyinput" style="width:150px;height:30px;" placeholder="起始時間" />
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>結束時間</td>
+                                                        <td>
+                                                            <div class="col-md-4">
+                                                                <input type="text" id="StudentBir" class="form-control form_date emptyinput" placeholder="結束日期" ng-model="dateEnd" data-autoclose="1" data-date-format="yyyy-MM-dd" bs-datepicker>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input type="time" class="form-control emptyinput" style="width:150px;height:30px;" placeholder="結束時間" />
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>重複</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <option value="" disabled selected>請選擇</option>
+                                                                <option value="1">每日</option>
+                                                                <option value="2">每週</option>
+                                                                <option value="3">每月</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>提示</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <option value="" disabled selected>請選擇</option>
+                                                                <option value="1">前五分鐘</option>
+                                                                <option value="2">前十分鐘</option>
+                                                                <option value="3">前一小時</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>邀請對象</td>
+                                                        <td>
+                                                            <select id="" class="form-control" style="width:180px;float:left;margin:1px;">
+                                                                <option value="" disabled selected>邀請對象</option>
+                                                                <option value="1" selected>督導</option>
+                                                                <option value="2" selected>經理</option>
+                                                                <option value="3" selected>區部IC</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--<span id="Office_Detail_hint" style="color:red"></span>
+                                <table class="table table-bordered my_table my_class_table" style="margin-top:10px">
+                                    <tr>
+                                        <th><span style="color:red">*</span>處室名稱</th>
+                                        <td><input id="New_OfficeName" maxlength="20" class="form-control2" style="width:70%"></input></td>
+                                    </tr>
+                                    <tr>
+                                        <th>處室電話</th>
+                                        <td><input id="New_OfficeNumber" maxlength="10" class="form-control2" style="width:70%" onKeyUp="value=value.replace(/[W]/g,'')"></input></td>
+                                    </tr>
+                                    <tr>
+                                        <th>處室分機</th>
+                                        <td><input id="New_OfficeExtnum" maxlength="5" class="form-control2" style="width:70%" onKeyUp="value=value.replace(/[W]/g,'')"></input></td>
+                                    </tr>
+
+                                </table>-->
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        
+                        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</div>
+
+<style type="text/css">
+    /*======================要覆蓋bootstrap=======================*/
+    .nav {
+        border-width: 0 0 3px 0;
+        border-color: #6aa1d0;
+        border-style: solid;
+    }
+    /*點選中的tab*/
+    .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+        /*color: #fff;*/
+        background-color: #6aa1d0;
+        border-radius: 10px 10px 0 0;
+    }
+
+    /*未選中的tab*/
+    .nav > li > a {
+        /*外觀大小*/
+        /*width: calc(830px/5);*/
+        width: 130px;
+        /*外觀視覺*/
+        border-radius: 10px 10px 0 0;
+        /*內部文字*/
+        font-size: 19px;
+        text-align: center;
+        /*位移空格*/
+    }
+
+</style>

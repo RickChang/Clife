@@ -1,0 +1,256 @@
+﻿
+/*彈出確認視窗*/
+.class_mod_01_header {
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+#radioBtn .notActive{
+    color: #3276b1;
+    background-color: #fff;
+}
+
+a.md-default-theme:not(.md-button), a:not(.md-button) {
+
+    color:darkgreen;
+
+}
+    a:not(.md-button):hover {
+         color:darkgreen;
+    }
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #fff;
+    background-color: #6aa1d0;
+    border-color: #6aa1d0;
+
+}
+
+/*.listgroup_active {
+    background: cadetblue;
+    cursor:pointer
+}*/
+
+/*學生選取之後變色*/
+.StuActive {
+    background-color:#6aa1d0;
+    color:white;
+}
+
+/*年級選取之後變色*/
+.GradeActive {
+    background-color:#6aa1d0;
+    color:white;
+}
+
+/*老師選取之後變色*/
+.TeaActive {
+    background-color:#6aa1d0;
+    color:white;
+}
+
+/*//母親表格*/
+.table-stripedMot > tbody > tr:nth-child(odd) {
+    /* background-color: #f9f9f9; */
+    background-color: antiquewhite;
+}
+
+/*祖父母表格*/
+.table-stripedGra > tbody > tr:nth-child(odd) {
+    /* background-color: #f9f9f9; */
+    background-color: lightgoldenrodyellow;
+}
+
+/*監護人表格*/
+.table-stripedGua > tbody > tr:nth-child(odd) {
+    /* background-color: #f9f9f9; */
+    background-color: lavenderblush;
+}
+
+/*water mark*/
+
+
+.info-opacity
+{
+    opacity: 0.8;
+    color: black;
+}
+
+.info-opacity2
+{
+    opacity: 0.9;
+    color: black;
+}
+
+.info-mask
+{
+    height: 0;  
+    position: absolute;     
+    top: 50%;
+    left: 20%;
+}
+.info-maskUpload
+{
+    height: 0;  
+    position: absolute;     
+    top: 53%;
+    left: 20%;
+}
+
+
+.info-maskTab
+{
+    height: 0;  
+    position: absolute;     
+    top: 10%;
+    left: 10%;
+}
+.info-maskName
+{
+    height: 0;  
+    position: absolute;     
+    top: 10%;
+    left: 12%;
+}
+
+.info-maskTabTableRight
+{
+    height: 0;  
+    position: absolute;     
+    top: 55%;
+    left: 30%;
+}
+
+.info-maskTabTableRight2
+{
+    height: 0;  
+    position: absolute;     
+    top: 40%;
+    left: 10%;
+}
+
+.info-maskTabTable
+{
+    height: 0;  
+    position: absolute;     
+    top: 18%;
+    left: 15%;
+}
+
+.info-maskTableLeft
+{
+    height: 0;  
+    position: absolute;     
+    top: 53%;
+    left: 5%;
+}
+
+.info-maskTableRight
+{
+    height: 0;  
+    position: absolute;     
+    top: 40%;
+    left: 35%;
+}
+
+.info-maskDivClick
+{
+    height: 0;  
+    position: absolute;     
+    top: 15%;
+    left: 8%;
+}
+
+
+
+.info-text
+{
+    color: gray;
+    font-size: 40px;
+    transform: translate(-50%, -50%);
+    transform: rotate(16deg);
+    /*line-height: 80px;*/
+    letter-spacing:3px;
+    padding-left:0.8em;
+}
+
+.info-textTab
+{
+    color: gray;
+    font-size: 35px;
+    transform: translate(-50%, -50%);
+    transform: rotate(16deg);
+    /*line-height: 80px;*/
+    letter-spacing:3px;
+    padding-left:0.8em;
+}
+
+.info-textTabTable
+{
+    color:lightgray;
+    font-size: 40px;
+    transform: translate(-50%, -50%);
+    transform: rotate(16deg);
+    /*line-height: 80px;*/
+    letter-spacing:3px;
+    padding-left:0.8em;
+}
+
+.info-textName
+{
+    color: gray;
+    width:80%;
+    font-size: 15px;
+    transform: translate(-50%, -50%);
+    transform: rotate(8deg);
+    /*line-height: 80px;*/
+    letter-spacing:3px;
+    padding-left:0.8em;
+}
+
+.info-textTabEdit
+{
+    color: gray;
+    font-size: 30px;
+    transform: translate(-50%, -50%);
+    transform: rotate(16deg);
+    letter-spacing:3px;
+    padding-left:0.6em;
+}
+
+.info-textTabTableEdit
+{
+    color:gray;
+    font-size: 30px;
+    transform: translate(-50%, -50%);
+    transform: rotate(12deg);
+    /*line-height: 80px;*/
+    letter-spacing:3px;
+    padding-left:0.8em;
+}
+
+
+.info-textTabTableLittle
+{
+    color:lightgray;
+    font-size: 25px;
+    transform: translate(-50%, -50%);
+    transform: rotate(12deg);
+    /*line-height: 80px;*/
+    letter-spacing:3px;
+    padding-left:0.8em;
+}
+
+.info-textDivClick
+{
+    color:gray;
+    font-size: 23px;
+    transform: translate(-50%, -50%);
+    transform: rotate(12deg);
+    /*line-height: 80px;*/
+    letter-spacing:3px;
+    padding-left:0.8em;
+}

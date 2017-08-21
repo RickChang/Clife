@@ -1,0 +1,2552 @@
+﻿ <!-- 新生管理與升級設定 -->
+<div class="row my_grup_title">
+    輔導卡A 表 <img src="img/btn-blue-info.png" style="width:30px; height:30px;margin-left:10px;padding-right:5px;padding-bottom:5px;" />
+</div>
+<!-- 搜尋條件 -->
+<div class="row" style="margin-bottom:10px;padding:0px;">
+
+    <span style="font-size:16px;font-weight:bold;">
+        選擇年級：
+        <select id="ClassName" class="selectpicker" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+            <option></option>
+            <option>一年級</option>
+            <option>二年級</option>
+            <option>三年級</option>
+            <option>四年級</option>
+            <option>五年級</option>
+            <option>六年級</option>
+
+        </select>
+    </span>
+    &nbsp;
+    <span style="font-size:16px;font-weight:bold;">
+        選擇班級：
+        <select id="ClassName" class="selectpicker" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+            <option></option>
+            <option>一年級X班</option>
+            <option>一年級X班</option>
+            <option>一年級X班</option>
+            <option>二年級X班</option>
+            <option>二年級X班</option>
+            <option>二年級X班</option>
+            <option>三年級X班</option>
+            <option>三年級X班</option>
+            <option>三年級X班</option>
+            <option>四年級X班</option>
+            <option>四年級X班</option>
+            <option>四年級X班</option>
+            <option>五年級X班</option>
+            <option>五年級X班</option>
+            <option>五年級X班</option>
+            <option>六年級X班</option>
+            <option>六年級X班</option>
+            <option>六年級X班</option>
+        </select>
+    </span>
+    &nbsp;
+    <span style="font-size:16px;font-weight:bold;"> 學生姓名：<input placeholder="王OO" id="StudentName" /></span>
+    &nbsp;
+    <span class="" style="padding-left:20px">
+        <button type="button" class="btn btn-success" id="btnSearch" onclick="search()">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            查詢
+        </button>
+    </span>
+    <hr>
+</div>
+
+<!-- 該學生同名 -->
+<div class="row widget-test" id="samename_class">
+    <!--同名1-->
+    <table id="" class="table table-bordered my_table my_class_table">
+        <thead>
+            <tr>
+                <th style="width:140px;">班級</th>
+                <th style="width:140px;">學號</th>
+                <th style="width:255px;">姓名</th>
+                <th style="width:50px;"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="tr_test">
+                <td scope="row">
+                    <!-- <input type="text" placeholder="" class="my_text_input" value="三年級X班" disabled /> -->
+                    三年級X班
+                    <button type="button" class="btn btn-warning pull-right" onclick="ClassDetail()">檢視該班級</button>
+                </td>
+                <!-- <td scope="row"><input type="text" placeholder="" class="my_text_input" value="302417" disabled /></td> -->
+                <!-- <td scope="row"><input type="text" placeholder="" class="my_text_input" value="王OO" disabled /></td> -->
+                <td scope="row">302417</td>
+                <td scope="row">王OO</td>
+
+                <td>
+                    <button type="button" class="btn btn-warning">詳細資料</button>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <!--同名2-->
+    <table id="" class="table table-bordered my_table my_class_table">
+        <thead>
+            <tr>
+                <th style="width:140px;">班級</th>
+                <th style="width:140px;">學號</th>
+                <th style="width:255px;">姓名</th>
+                <th style="width:50px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="tr_test">
+                <td scope="row">
+                    六年級X班
+                    <button type="button" class="btn btn-warning pull-right" onclick="">檢視該班級</button>
+                </td>
+                <td scope="row">603101</td>
+                <td scope="row">王OO</td>
+                <td>
+                    <button type="button" class="btn btn-warning">詳細資料</button>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <!--同名3-->
+    <table id="" class="table table-bordered my_table my_class_table">
+        <thead>
+            <tr>
+                <th style="width:140px;">班級</th>
+                <th style="width:140px;">學號</th>
+                <th style="width:255px;">姓名</th>
+                <th style="width:50px;"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="tr_test">
+                <td scope="row">
+                    四年級X班
+                    <button type="button" class="btn btn-warning pull-right" onclick="">檢視該班級</button>
+                </td>
+                <td scope="row">402104</td>
+                <td scope="row">王OO</td>
+                <td>
+                    <button type="button" class="btn btn-warning">詳細資料</button>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<!-- 該學生班級 -->
+<div class="row widget-test" id="personal_class">
+
+
+    <table id="" class="table table-bordered my_table my_class_table widget-test">
+        <thead>
+            <tr>
+                <th style="width:140px;">班級</th>
+                <th style="width:140px;">學號</th>
+                <th style="width:255px;">姓名</th>
+                <th style="width:50px;"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <!--學生1-->
+            <tr class="">
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="三年級X班" disabled /></td>
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="302401" disabled /></td>
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="林OO" disabled /></td>
+                <td>
+                    <button type="button" class="btn btn-default pull-right btn-success" disabled>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        修改
+                    </button>
+
+                </td>
+            </tr>
+            <!--學生2-->
+            <tr class="">
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="三年級X班" disabled /></td>
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="302417" disabled /></td>
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="王OO" disabled /></td>
+                <td>
+                    <button type="button" class="btn btn-default pull-right btn-success" onclick="PersonalDetail()">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        修改
+                    </button>
+
+                </td>
+            </tr>
+            <!--學生3-->
+            <tr class="">
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="三年級X班" disabled /></td>
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="302402" disabled /></td>
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="陳OO" disabled /></td>
+                <td>
+                    <button type="button" class="btn btn-default pull-right btn-success" disabled>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        修改
+                    </button>
+
+                </td>
+            </tr>
+            <!--學生4-->
+            <tr class="">
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="三年級X班" disabled /></td>
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="302408" disabled /></td>
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="黃OO" disabled /></td>
+                <td>
+                    <button type="button" class="btn btn-default pull-right btn-success" disabled>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        修改
+                    </button>
+
+                </td>
+            </tr>
+            <!--學生5-->
+            <tr class="">
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="三年級X班" disabled /></td>
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="302416" disabled /></td>
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="劉OO" disabled /></td>
+                <td>
+                    <button type="button" class="btn btn-default pull-right btn-success" disabled>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        修改
+                    </button>
+                </td>
+            </tr>
+            <!--學生6-->
+            <tr class="">
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="三年級X班" disabled /></td>
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="302474" disabled /></td>
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="葉OO" disabled /></td>
+                <td>
+                    <button type="button" class="btn btn-default pull-right btn-success" disabled>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        修改
+                    </button>
+                </td>
+            </tr>
+            <!--學生7-->
+            <tr class="">
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="三年級X班" disabled /></td>
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="303107" disabled /></td>
+                <td scope="row"><input type="text" placeholder="" class="my_text_input" value="林OO" disabled /></td>
+                <td>
+                    <button type="button" class="btn btn-default pull-right btn-success" disabled>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        修改
+                    </button>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+    <table id="" class="table table-bordered my_table my_class_table ">
+        <thead>
+            <tr>
+                <th style="width:25%;">班級</th>
+                <th style="width:;">學號</th>
+                <th style="width:;">姓名</th>
+                <th style="width:20px;"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <!--學生1-->
+            <tr class="">
+
+                <td class="tr_test">三年級X班</td>
+                <td class="tr_test">300001</td>
+                <td class="tr_test">林OO</td>
+
+                <td>
+                    <button type="button" class="btn btn-default pull-right btn-success" disabled>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        修改
+                    </button>
+
+                </td>
+            </tr>
+            <!--學生2-->
+            <tr class="">
+
+                <td class="tr_test">三年級X班</td>
+                <td class="tr_test">300012</td>
+                <td class="tr_test">王小明</td>
+                <td>
+                    <button type="button" class="btn btn-default pull-right btn-success" onclick="PersonalDetail()">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        修改
+                    </button>
+
+                </td>
+            </tr>
+            <!--學生3-->
+            <tr class="">
+
+                <td class="tr_test">三年級X班</td>
+                <td class="tr_test">304310</td>
+                <td class="tr_test">陳OO</td>
+                <td>
+                    <button type="button" class="btn btn-default pull-right btn-success" disabled>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        修改
+                    </button>
+
+                </td>
+            </tr>
+            <!--學生4-->
+            <tr class="">
+
+                <td class="tr_test">三年級X班</td>
+                <td class="tr_test">300908</td>
+                <td class="tr_test">賴OO</td>
+                <td>
+                    <button type="button" class="btn btn-default pull-right btn-success" disabled>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        修改
+                    </button>
+
+                </td>
+            </tr>
+            <!--學生5-->
+            <tr class="">
+
+                <td class="tr_test">三年級X班</td>
+                <td class="tr_test">308703</td>
+                <td class="tr_test">黃OO</td>
+                <td>
+                    <button type="button" class="btn btn-default pull-right btn-success" disabled>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        修改
+                    </button>
+                </td>
+            </tr>
+            <!--學生6-->
+            <tr class="">
+
+                <td class="tr_test">三年級X班</td>
+                <td class="tr_test">307612</td>
+                <td class="tr_test">祁OO</td>
+                <td>
+                    <button type="button" class="btn btn-default pull-right btn-success" disabled>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        修改
+                    </button>
+                </td>
+            </tr>
+            <!--學生7-->
+            <tr class="">
+
+                <td class="tr_test">三年級X班</td>
+                <td class="tr_test">300913</td>
+                <td class="tr_test">葉OO</td>
+                <td>
+                    <button type="button" class="btn btn-default pull-right btn-success" disabled>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        修改
+                    </button>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+    <ul class="pagination pull-right">
+        <li class="page-item">
+            <a class="page-link" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+        <li class="page-item"><a class="page-link">1</a></li>
+        <li class="page-item"><a class="page-link">2</a></li>
+        <li class="page-item"><a class="page-link">3</a></li>
+        <li class="page-item">
+            <a class="page-link" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+    </ul>
+
+</div>
+
+<!-- 該學生 -->
+<div class="modal fade" id="peraonal_detail">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background:#D6ECE8">
+            <div class="modal-header" style="background:linear-gradient(to bottom,  #7ae2df 0%,#65b2b2 100%)">
+                <div class="pull-right" id="btnCLOSE" data-dismiss="modal"><img src="img/btn-oran-close.png" style="width:30px; height:30px;margin-bottom:10px;" /></div>
+                <div class="" id="exampleModalLongTitle1" style="color:white">
+                    輔導卡A 表--
+                    姓名:<span>王小明</span>&nbsp;
+                    學號:<span>100012</span>&nbsp;
+                    班級:<span>六年三班</span>&nbsp;
+                    座號:<span>3號</span>&nbsp;
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="modal-body ">
+                <!-- 基本資料 -->
+                <div class="row class_mod_01_content">
+                    <div class="container">
+                        <ul class="nav nav-pills">
+                            <!-- <li class="active"><a data-toggle="tab" href="#menu1">新學年度 (100)</a></li> -->
+                            <!-- <li class=""><a data-toggle="tab" href="#menu2">新學年度 (101)</a></li> -->
+                            <!-- <li class=""><a data-toggle="tab" href="#menu3">新學年度 (102)</a></li> -->
+                            <!-- <li class=""><a data-toggle="tab" href="#menu4">新學年度 (103)</a></li> -->
+                            <!-- <li class=""><a data-toggle="tab" href="#menu5">新學年度 (104)</a></li> -->
+                            <!-- <li class=""><a data-toggle="tab" href="#menu6">新學年度 (105)</a></li> -->
+
+                            <li class="active"><a data-toggle="pill" href="#menu1">一年級</a></li>
+                            <li><a data-toggle="pill" href="#menu2">二年級 </a></li>
+                            <li><a data-toggle="pill" href="#menu3">三年級 </a></li>
+                            <li><a data-toggle="pill" href="#menu4">四年級</a></li>
+                            <li><a data-toggle="pill" href="#menu5">五年級</a></li>
+                            <li><a data-toggle="pill" href="#menu6">六年級</a></li>
+                        </ul>
+                        <div class="row" style="border:#A9A9A9 1px solid;background-color:white">
+                            <div class="col-md-2">
+                                <div class="tab-content" style="background:;padding-top:10px">
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" style="background-color: #E3F9F5;">
+                                            <h3 class="panel-title">
+
+                                                <span style="font-size:16px;font-weight:bold;">
+                                                    年級：
+                                                    <select id="ClassName" class="selectpicker" style="width:50px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>一</option>
+                                                        <option>二</option>
+                                                        <option>三</option>
+                                                        <option>四</option>
+                                                        <option>五</option>
+                                                        <option>六</option>
+
+                                                    </select>
+                                                </span>
+                                                <br>
+                                                <span style="font-size:16px;font-weight:bold;">
+                                                    班級：
+                                                    <select id="ClassName" class="selectpicker" style="width:50px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>A</option>
+                                                        <option>B</option>
+                                                        <option>C</option>
+                                                        <option>D</option>
+                                                        <option>E</option>
+                                                        <option>F</option>
+
+                                                    </select>
+                                                </span>
+
+                                            </h3>
+                                        </div>
+                                        <ul class="list-group">
+                                            <a href="#" class="list-group-item" style="font-size:16px"><span>1.</span>王小明</a>
+                                            <a href="#" class="list-group-item" style="font-size:16px"><span>2.</span>李大人</a>
+                                            <a href="#" class="list-group-item" style="font-size:16px"><span>3.</span>王某某</a>
+                                            <a href="#" class="list-group-item" style="font-size:16px"><span>4.</span>陳OO</a>
+                                            <a href="#" class="list-group-item" style="font-size:16px"><span>5.</span>劉欣欣</a>
+                                            <a href="#" class="list-group-item" style="font-size:16px"><span>6.</span>林XX</a>
+                                            <a href="#" class="list-group-item" style="font-size:16px"><span>7.</span>蔡ZZ</a>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-10">
+                                <div class="tab-content" style="background:">
+                                    <div id="menu1" class="tab-pane fade in active" style="padding:10px">
+                                        <!-- 基本資料 -->
+
+                                        <table id="BasicTable_1" class="tg table table-bordered table-hover table-striped" style="background:white">
+                                            <thead>
+                                                <tr> </tr>
+                                            </thead>
+                                            <colgroup>
+                                                <col style="width: 115.333333px">
+                                                <col style="width: 73.333333px">
+                                                <col style="width: 61.333333px">
+                                                <col style="width: 77.333333px">
+                                                <col style="width: 60.333333px">
+                                                <col style="width: 43.333333px">
+                                                <col style="width: 51.333333px">
+                                                <col style="width: 39.333333px">
+                                                <col style="width: 51.333333px">
+                                                <col style="width: 39.333333px">
+                                                <col style="width: 51.333333px">
+                                            </colgroup>
+
+                                            <tr class="">
+
+                                                <th class="tg-s6z2">姓名</th>
+                                                <th class="tg-031e"><input class="form-control2" id="BasicName" style="width:90%" value="王小明" type="text" disabled /></th>
+                                                <th class="tg-s6z2">性別</th>
+                                                <th class="tg-031e">
+                                                    <select id="Sex" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;" type="text" disabled>
+                                                        <option value="man" selected>男</option>
+                                                        <option value="woman">女</option>
+                                                    </select>
+                                                </th>
+                                                <th class="tg-s6z2" rowspan="2">級任教師</th>
+                                                <!-- <th class="tg-s6z2"> 一年級</th> -->
+                                                <th class="tg-baqh"><input class="form-control2" id="TeacherName" style="width:90%" value="李大同" type="text" disabled /></th>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-s6z2">入學年月</td>
+                                                <td class="tg-031e" colspan="3"><input class="form-control2" id="InschoolDate" style="width:90%" value="100/09/01" type="text" disabled />  &nbsp;<i class="fa fa-calendar"></i></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-s6z2">入學學校</td>
+                                                <td class="tg-031e" colspan="3"><input class="form-control2" id="InschoolName" style="width:90%" value="桃園國小" type="text" disabled /> </td>
+                                                <td class="tg-s6z2" rowspan="3">異動紀錄</td>
+                                                <td class="tg-031e" colspan="6"><input class="form-control2" id="SpecialRecord1" style="width:90%" value="" type="text" disabled /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-s6z2">學號</td>
+                                                <td class="tg-031e" colspan="3"> <input class="form-control2" id="StudentNumber" style="width:90%" value="100012" type="text" disabled /></td>
+                                                <td class="tg-031e" colspan="6"><input class="form-control2" id="SpecialRecord2" style="width:90%" value="" type="text" disabled /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-s6z2">畢業年月</td>
+                                                <td class="tg-031e" colspan="3"> <input class="form-control2" id="GraduationDate" style="width:90%" value="" type="text" disabled />  &nbsp;<i class="fa fa-calendar"></i></td>
+                                                <td class="tg-031e" colspan="6"><input class="form-control2" id="SpecialRecord3" style="width:90%" value="" type="text" disabled /></td>
+                                            </tr>
+
+                                        </table>
+                                        <!-- 詳細資料 -->
+                                        <table id="DetailTabl_1" class="tg table table-bordered table-hover table-striped" style="background:white">
+                                            <colgroup>
+                                                <col style="width: 27.333333px">
+                                                <col style="width: 110.333333px">
+                                                <col style="width: 71.333333px">
+                                                <col style="width: 71.333333px">
+                                                <col style="width: 71.333333px">
+                                                <col style="width: 71.333333px">
+                                                <col style="width: 73.333333px">
+                                                <col style="width: 73.333333px">
+                                                <col style="width: 73.333333px">
+                                                <col style="width: 73.333333px">
+                                                <col style="width: 71.333333px">
+                                                <col style="width: 71.333333px">
+                                                <col style="width: 66.333333px">
+                                                <col style="width: 71.333333px">
+                                            </colgroup>
+                                            <tr>
+                                                <th class="tg-s6z2" rowspan="8">本<br>人<br>概<br>況</th>
+                                                <th class="tg-031e">身分證字號</th>
+                                                <th class="tg-s6z2" colspan="12"><input class="form-control2" id="StudentID" style="width:20%" value="M1XXXXXXXX" /></td></th>
+                                            <tr>
+                                                <td class="tg-031e">出生地</td>
+                                                <td class="tg-s6z2" colspan="7">
+                                                    <select id="BornNation" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台灣</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                    省
+                                                    <select id="BornLocation" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台北市</option>
+                                                        <option>新北市</option>
+                                                        <option>桃園市</option>
+                                                        <option>基隆市</option>
+                                                        <option>新竹市</option>
+                                                        <option>宜蘭市</option>
+                                                        <option>花蓮市</option>
+                                                        <option>台東市</option>
+                                                        <option>嘉義市</option>
+                                                        <option>南投市</option>
+                                                        <option>高雄市</option>
+                                                    </select>
+                                                </td>
+                                                <td class="tg-s6z2">生日</td>
+                                                <td class="tg-s6z2" colspan="4"><input class="form-control2" id="BirthDay" type="date" style="width:90%" value="93/07/03" />  &nbsp;<i class="fa fa-calendar"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-031e">血型</td>
+                                                <td class="tg-s6z2" colspan="12">
+                                                    <select class="form-control2" id="BloodStyle" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>A</option>
+                                                        <option>B</option>
+                                                        <option>O</option>
+                                                        <option>AB</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-031e" rowspan="4">家庭住址</td>
+                                                <td class="tg-s6z2" colspan="7">
+                                                    <select class="form-control2" id="AddressNation1" style="width:85px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台灣</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                    省
+                                                    <select id="AddressLocation1" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台北市</option>
+                                                        <option>新北市</option>
+                                                        <option>桃園市</option>
+                                                        <option>基隆市</option>
+                                                        <option>新竹市</option>
+                                                        <option>宜蘭市</option>
+                                                        <option>花蓮市</option>
+                                                        <option>台東市</option>
+                                                        <option>嘉義市</option>
+                                                        <option>南投市</option>
+                                                        <option>高雄市</option>
+                                                    </select>
+                                                    <input id="Address1" class="form-control2" style="width:55%" value="桃園市桃雲鎮濤雲路123號" />
+                                                </td>
+                                                <td class="tg-s6z2" rowspan="4">電話</td>
+                                                <td class="tg-s6z2" colspan="4"><input class="form-control2" id="Telephone1" style="width:90%" value="1234567890" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-s6z2" colspan="7">
+                                                    <select id="AddressNation2" class="form-control2" style="width:85px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台灣</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                    省
+                                                    <select id="AddressLocation2" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台北市</option>
+                                                        <option>新北市</option>
+                                                        <option>桃園市</option>
+                                                        <option>基隆市</option>
+                                                        <option>新竹市</option>
+                                                        <option>宜蘭市</option>
+                                                        <option>花蓮市</option>
+                                                        <option>台東市</option>
+                                                        <option>嘉義市</option>
+                                                        <option>南投市</option>
+                                                        <option>高雄市</option>
+                                                    </select>
+
+
+
+                                                    <input id="Address2" class="form-control2" style="width:55%" value="" />
+                                                </td>
+                                                <td class="tg-s6z2" colspan="4"><input class="form-control2" id="Telephone2" style="width:90%" value="" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-s6z2" colspan="7">
+                                                    <select id="AddressNation3" class="form-control2" style="width:85px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台灣</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                    省
+                                                    <select id="AddressLocation3" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台北市</option>
+                                                        <option>新北市</option>
+                                                        <option>桃園市</option>
+                                                        <option>基隆市</option>
+                                                        <option>新竹市</option>
+                                                        <option>宜蘭市</option>
+                                                        <option>花蓮市</option>
+                                                        <option>台東市</option>
+                                                        <option>嘉義市</option>
+                                                        <option>南投市</option>
+                                                        <option>高雄市</option>
+                                                    </select>
+
+
+                                                    <input id="Address3" class="form-control2" style="width:55%" value="" />
+                                                </td>
+                                                <td class="tg-s6z2" colspan="4"><input class="form-control2" id="Telephone3" style="width:90%" value="" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-s6z2" colspan="7">
+                                                    <select id="AddressNation4" class="form-control2" style="width:85px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台灣</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                    省
+                                                    <select id="AddressLocation4" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台北市</option>
+                                                        <option>新北市</option>
+                                                        <option>桃園市</option>
+                                                        <option>基隆市</option>
+                                                        <option>新竹市</option>
+                                                        <option>宜蘭市</option>
+                                                        <option>花蓮市</option>
+                                                        <option>台東市</option>
+                                                        <option>嘉義市</option>
+                                                        <option>南投市</option>
+                                                        <option>高雄市</option>
+                                                    </select>
+
+                                                    <input id="Address4" class="form-control2" style="width:55%" value="" />
+                                                </td>
+                                                <td class="tg-s6z2" colspan="4"><input class="form-control2" id="Telephone4" style="width:90%" value="" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-031e">學前教育</td>
+                                                <td class="tg-s6z2" colspan="12">
+                                                    <select id="kidornot" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option selected>曾進幼稚園</option>
+                                                        <option>未曾進幼稚園</option>
+                                                    </select>
+                                                    共<input id="kidornotYear" class="form-control2" style="width:10%" value="2" />年
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-031e" rowspan="19">家庭狀況</td>
+                                                <td class="tg-031e">直系血親</td>
+                                                <td class="tg-031e" colspan="12">
+                                                    父 <input id="FatherLive" class="form-control2" style="width:10%" value="存" />(存、歿) (<input class="form-control2" id="FatherAge" style="width:10%" value="70" />年生) &nbsp;&nbsp;祖父 <input class="form-control2" id="GrandFatherLive" style="width:10%" value="存" />(存、歿)
+                                                    <br>
+                                                    母 <input id="MomLive" class="form-control2" style="width:10%" value="存" />(存、歿) (<input class="form-control2" id="MomAge" style="width:10%" value="70" />年生) &nbsp;&nbsp;祖母 <input class="form-control2" id="GrandMotherLive" style="width:10%" value="存" />(存、歿)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-031e">父母教育程度</td>
+                                                <td class="tg-031e" colspan="12">
+                                                    父：
+                                                    <select id="FatherKnowWord" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option selected>識字</option>
+                                                        <option>不識字</option>
+                                                    </select>
+                                                    <select id="FatherSchool" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>小學</option>
+                                                        <option>國(初)中</option>
+                                                        <option>高中(職)</option>
+                                                        <option>專科</option>
+                                                        <option>學士</option>
+                                                        <option selected>碩士</option>
+                                                        <option>博士</option>
+                                                    </select>
+                                                    &nbsp;&nbsp;
+                                                    <br>
+                                                    <br>
+
+                                                    母：
+                                                    <select id="MotherKnowWord" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option selected>識字</option>
+                                                        <option>不識字</option>
+                                                    </select>
+                                                    <select id="MotherSchool" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>小學</option>
+                                                        <option>國(初)中</option>
+                                                        <option>高中(職)</option>
+                                                        <option>專科</option>
+                                                        <option>學士</option>
+                                                        <option selected>碩士</option>
+                                                        <option>博士</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l" rowspan="4">家長</td>
+                                                <td class="tg-baqh" colspan="1">稱謂</td>
+                                                <td class="tg-baqh" colspan="2">姓名</td>
+                                                <td class="tg-baqh" colspan="2">職業</td>
+                                                <td class="tg-baqh" colspan="2">工作機構</td>
+                                                <td class="tg-baqh" colspan="2">職稱</td>
+                                                <td class="tg-baqh" colspan="2">電話</td>
+                                                <td class="tg-baqh">備註</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh" colspan="1">父</td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="FatherName" style="width:100%" value="王爸爸" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="FatherWork" style="width:90%" value="工程師" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="FatherWorkPlace" style="width:90%" value="台電" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="FatherWorkTitle" style="width:90%" value="工程師" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="FatherWorkPhone" style="width:100%" value="0910101000" /></td>
+                                                <td class="tg-baqh">
+                                                    <select id="DadNoteBorn" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option selected>生</option>
+                                                        <option>繼</option>
+                                                        <option>養</option>
+                                                    </select>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh" colspan="1">母</td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="MotherName" style="width:100%" value="黃媽媽" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="MotherWork" style="width:90%" value="公務員" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="MotherWorkPlace" style="width:90%" value="水利署" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="MotherWorkTitle" style="width:90%" value="公務員" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="MotherWorkPhone" style="width:100%" value="0987878771" /></td>
+                                                <td class="tg-baqh">
+                                                    <select id="MomNoteBorn" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option selected>生</option>
+                                                        <option>繼</option>
+                                                        <option>養</option>
+                                                    </select>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh" colspan="1"><input class="form-control2" id="OtherFamilyTiltle" style="width:100%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="OtherFamilyName" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="OtherFamilyWork" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="OtherFamilyWorkPlace" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="OtherFamilyWorkTitle" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="OtherFamilyWorkPhone" style="width:100%" value="" /></td>
+                                                <td class="tg-baqh">
+                                                    <select id="OtherNoteBorn" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>生</option>
+                                                        <option>繼</option>
+                                                        <option>養</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">監護人</td>
+                                                <td class="tg-baqh" colspan="12">
+                                                    姓名: <input style="width:10%" class="form-control2" id="GuardianName" value="王爸爸" />
+                                                    性別: <select id="GuardianSex" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option selected>男</option>
+                                                        <option>女</option>
+                                                    </select> &nbsp;&nbsp;
+                                                    關係: <input id="GuardianRelation" class="form-control2" style="width:10%" value="父子" />
+                                                    <br>
+                                                    通訊處:
+                                                    <select id="GuardianAddressNation" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台灣</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                    省
+                                                    <select id="GuardianAddressLocation" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台北市</option>
+                                                        <option>新北市</option>
+                                                        <option>桃園市</option>
+                                                        <option>基隆市</option>
+                                                        <option>新竹市</option>
+                                                        <option>宜蘭市</option>
+                                                        <option>花蓮市</option>
+                                                        <option>台東市</option>
+                                                        <option>嘉義市</option>
+                                                        <option>南投市</option>
+                                                        <option>高雄市</option>
+                                                    </select>
+
+
+                                                    <input id="GuardianAddress" class="form-control2" style="width:50%" value="桃園市桃雲鎮濤雲路123號" />
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l" rowspan="5">兄弟姊妹(按出生順序填寫)<br>學生本人排行第<input class="form-control2" id="BornOrder" style="width:80%" value="1" /></td>
+                                                <td class="tg-baqh">稱謂</td>
+                                                <td class="tg-baqh" colspan="2">姓名</td>
+                                                <td class="tg-baqh" colspan="2">畢(肄)業業學校<br></td>
+                                                <td class="tg-baqh" colspan="4">出生年月</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh"><input class="form-control2" id="BroSisTitle" style="width:90%" value="妹" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="BroSisName" style="width:90%" value="王妹妹" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="BroSisSchool" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="4">
+                                                    <input id="BroSisBirthday" class="form-control2" type="date" style="width:80%" value="95/07/03" />
+                                                    <i class="fa fa-calendar"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="4">
+                                                    <input type="date" class="form-control2" style="width:80%" value="" />
+                                                    <i class="fa fa-calendar">
+                                                    </i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="4">
+                                                    <input type="date" class="form-control2" style="width:80%" value="" />
+                                                    <i class="fa fa-calendar"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="4">
+                                                    <input type="date" class="form-control2" style="width:80%" value="" />
+                                                    <i class="fa fa-calendar"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l" rowspan="2">父母關係</td>
+                                                <td class="tg-baqh" colspan="6" rowspan="2">1. 同住 2. 分住 3. 分居 4. 離婚 5. 其他</td>
+                                                <td class="tg-baqh" colspan="6">一年級</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="ParentReation1" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">家庭氣氛</td>
+                                                <td class="tg-baqh" colspan="6">1. 很和諧 2. 和諧 3. 普通 4. 不和諧 5. 很不和諧</td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="FamilyStyle1" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">父母管教方式</td>
+                                                <td class="tg-baqh" colspan="6">1. 民主式 2. 權威式 3. 放任式 4. 其他</td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="EducationStyle1" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">居住環境</td>
+                                                <td class="tg-baqh" colspan="6">1. 住宅區 2. 商業區 3. 混和(住、商、工)區 4. 軍眷區 5. 農村 6. 漁村 7. 工礦區 8. 山地 9. 其他</td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="LocationStyle1" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">本人住宿</td>
+                                                <td class="tg-baqh" colspan="6">1. 住在家裡(學區內) 2. 住在家裡(學區外) 3. 寄居親友家裡 4. 其他</td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="LiveStyle1" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">經濟狀況</td>
+                                                <td class="tg-baqh" colspan="6">1. 富裕 2. 小康 3. 普通 4. 清寒 5. 貧困</td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="RichStyle1" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh" rowspan="6">學習狀況</td>
+                                                <td class="tg-yw4l" rowspan="2">最喜歡科目<br>(至少選三項)<br>最感困難科目</td>
+                                                <td class="tg-baqh" colspan="5" rowspan="2">1. 語文 2. 健康與體育 3. 社會 4. 藝術與人文 5. 自然與生活科技 6. 數學 7. 綜合活動</td>
+                                                <td class="tg-baqh">最喜歡</td>
+                                                <td class="tg-baqh" colspan="6">
+
+                                                    <select id="LikeSubject1" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="LikeSubject2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="LikeSubject3" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    <br>
+                                                    <br>
+                                                    <select id="LikeSubject4" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="LikeSubject5" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="LikeSubject6" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh">最困難</td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="HardSubject1" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="HardSubject2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="HardSubject3" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    <br>
+                                                    <br>
+                                                    <select id="HardSubject4" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="HardSubject5" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="HardSubject6" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">特殊才能<br>(至少選三項)</td>
+                                                <td class="tg-baqh" colspan="6">1. 無 2. 球類 3. 田徑 4. 游泳 5. 武術(  ) 6. 美術 7. 歌唱 8. 樂器演奏(  ) 9. 工藝 10. 家事 11. 演說 12. 寫作 13. 舞蹈 14. 戲劇 15. 書法 16. 珠算 17. 領導 18. 其他 </td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="SpecialSkill1" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="SpecialSkill2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="SpecialSkill3" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    <br>
+                                                    <br>
+                                                    <select id="SpecialSkill4" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="SpecialSkill5" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="SpecialSkill6" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">休閒興趣(至多選三項)</td>
+                                                <td class="tg-baqh" colspan="6">1. 電視電影 2. 閱讀 3. 登山 4. 露營 5. 旅行郊遊 6. 美術 7. 歌唱 8. 樂器演奏() 9. 釣魚 10. 划船游泳 11. 集郵 12. 繪畫 13. 舞蹈 14. 打球 15. 編織 16. 下棋 17. 養小動物 18. 其他</td>
+
+                                                <td colspan="6">
+                                                    <select id="Interested1" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="Interested2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="Interested3" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l" rowspan="2">擔任校內或班內職務</td>
+                                                <td class="tg-baqh" rowspan="2">一年級</td>
+                                                <td class="tg-baqh" colspan="6">1.<input class="form-control2" id="ClassTitle1" style="width:90%" value="無" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh" colspan="6">2.<input class="form-control2" id="ClassTitle2" style="width:90%" value="班長" /></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l" colspan="8"></td>
+                                                <td class="tg-yw4l">一年級</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l" rowspan="7">生活適應</td>
+                                                <td class="tg-yw4l">生活習慣</td>
+                                                <td class="tg-baqh" colspan="6">1. 整潔 2. 髒亂 3. 勤勞 4. 懶惰 5. 節儉  6. 浪費 7. 作息有規律 8. 作息無規律 </td>
+                                                <td class="tg-baqh" colspan="">
+                                                    <select id="LifeCustom" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">人際關係</td>
+                                                <td class="tg-baqh" colspan="6">1. 和氣 2. 好爭吵 3. 合群 4. 自我中心 5. 活潑 6. 冷漠 7. 信賴他人 8. 多疑善妒</td>
+                                                <td class="tg-baqh" colspan="">
+                                                    <select id="PeopleRelation" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">外向行為</td>
+                                                <td class="tg-baqh" colspan="6">1. 領導力強 2. 欺負同伴 3. 健談 4. 常講粗話 5. 慷慨 6. 好遊蕩 7. 熱心公務 8. 愛唱反調</td>
+                                                <td class="tg-baqh" colspan="">
+                                                    <select id="OuterBehavior" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">內向行為</td>
+                                                <td class="tg-baqh" colspan="6">1. 謹慎 2. 畏縮 3. 文靜 4. 過分沉默 5. 自信 6. 過分依賴 7. 情緒穩定 8. 多愁善感</td>
+                                                <td class="tg-baqh" colspan="">
+                                                    <select id="InnerBehavior" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">學習行為</td>
+                                                <td class="tg-baqh" colspan="6">1. 專心 2. 分心 3. 積極努力 4. 被動馬虎 5. 有恆心 6. 半途而廢 7. 深思好問 8. 偏愛或偏惡某些功課</td>
+                                                <td class="tg-baqh" colspan="">
+                                                    <select id="StudyBehavior" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">不良習慣</td>
+                                                <td class="tg-baqh" colspan="6">1. 無 2. 愛發怪聲 3. 口吃 4. 作弄他人 5. 吮拇指咬指甲 6. 沉迷不良書刊 7. 吸菸 8. 吸毒</td>
+                                                <td class="tg-baqh" colspan="">
+                                                    <select id="BadBehavior" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">焦慮症狀</td>
+                                                <td class="tg-baqh" colspan="6">1. 無 2. 坐立不安 3. 表情緊張 4. 不停玩弄東西 5. 發抖 6. 肚子痛 7. 胸痛 8. 頭痛</td>
+                                                <td class="tg-baqh" colspan="">
+                                                    <select id="Anxiety" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <button type="button" class="btn btn-warning" onclick="PassBasicData1to2();PassDetailData1to2()">複製資料至下一年度</button>
+                                    </div>
+
+                                    <div id="menu2" class="tab-pane fade" style="padding:10px">
+                                        <!-- 基本資料 -->
+                                        <table id="BasicTable_2" class="tg table table-bordered table-hover table-striped" style="background:white">
+                                            <thead>
+                                                <tr> </tr>
+                                            </thead>
+
+                                            <colgroup>
+                                                <col style="width: 115.333333px">
+                                                <col style="width: 73.333333px">
+                                                <col style="width: 61.333333px">
+                                                <col style="width: 77.333333px">
+                                                <col style="width: 60.333333px">
+                                                <col style="width: 43.333333px">
+                                                <col style="width: 51.333333px">
+                                                <col style="width: 39.333333px">
+                                                <col style="width: 51.333333px">
+                                                <col style="width: 39.333333px">
+                                                <col style="width: 51.333333px">
+                                            </colgroup>
+
+                                            <tr class="">
+
+                                                <th class="tg-s6z2">姓名</th>
+                                                <th class="tg-031e"><input id="BasicName2" class="form-control2" style="width:90%" value="" disabled /></th>
+                                                <th class="tg-s6z2">性別</th>
+                                                <th class="tg-031e">
+                                                    <select id="Sex2" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold; " disabled>
+                                                        <option value="man">男</option>
+                                                        <option value="woman">女</option>
+                                                    </select>
+                                                </th>
+                                                <th class="tg-s6z2" rowspan="2">級任教師</th>
+
+                                                <th class="tg-baqh"><input class="form-control2" id="TeacherName2" style="width:90%" value="" disabled /></th>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-s6z2">入學年月</td>
+                                                <td class="tg-031e" colspan="3"><input class="form-control2" id="InschoolDate2" style="width:90%" value="" disabled />  &nbsp;<i class="fa fa-calendar"></i></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-s6z2">入學學校</td>
+                                                <td class="tg-031e" colspan="3"><input class="form-control2" id="InschoolName2" style="width:90%" value="" disabled /> </td>
+                                                <td class="tg-s6z2" rowspan="3">異動紀錄</td>
+                                                <td class="tg-031e" colspan="6"><input class="form-control2" id="SpecialRecord2_1" style="width:90%" value="" disabled /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-s6z2">學號</td>
+                                                <td class="tg-031e" colspan="3"> <input class="form-control2" id="StudentNumber2" style="width:90%" value="" disabled /></td>
+                                                <td class="tg-031e" colspan="6"><input class="form-control2" id="SpecialRecord2_2" style="width:90%" value="" disabled /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-s6z2">畢業年月</td>
+                                                <td class="tg-031e" colspan="3"> <input class="form-control2" id="GraduationDate2" style="width:90%" value="" disabled />  &nbsp;<i class="fa fa-calendar"></i></td>
+                                                <td class="tg-031e" colspan="6"><input class="form-control2" id="SpecialRecord2_3" style="width:90%" value="" disabled /></td>
+                                            </tr>
+
+                                        </table>
+                                        <!-- 詳細資料 -->
+                                        <table id="DetailTabl_2" class="tg table table-bordered table-hover table-striped" style="background:white">
+                                            <colgroup>
+                                                <col style="width: 27.333333px">
+                                                <col style="width: 110.333333px">
+                                                <col style="width: 71.333333px">
+                                                <col style="width: 71.333333px">
+                                                <col style="width: 71.333333px">
+                                                <col style="width: 71.333333px">
+                                                <col style="width: 73.333333px">
+                                                <col style="width: 73.333333px">
+                                                <col style="width: 73.333333px">
+                                                <col style="width: 73.333333px">
+                                                <col style="width: 71.333333px">
+                                                <col style="width: 71.333333px">
+                                                <col style="width: 66.333333px">
+                                                <col style="width: 71.333333px">
+                                            </colgroup>
+                                            <tr>
+                                                <th class="tg-s6z2" rowspan="8">本<br>人<br>概<br>況</th>
+                                                <th class="tg-031e">身分證字號</th>
+                                                <th class="tg-s6z2" colspan="12"><input class="form-control2" id="StudentID_2" style="width:20%" value="" /></td></th>
+                                            <tr>
+                                                <td class="tg-031e">出生地</td>
+                                                <td class="tg-s6z2" colspan="7">
+                                                    <select id="BornNation_2" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台灣</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                    省
+                                                    <select id="BornLocation_2" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台北市</option>
+                                                        <option>新北市</option>
+                                                        <option>桃園市</option>
+                                                        <option>基隆市</option>
+                                                        <option>新竹市</option>
+                                                        <option>宜蘭市</option>
+                                                        <option>花蓮市</option>
+                                                        <option>台東市</option>
+                                                        <option>嘉義市</option>
+                                                        <option>南投市</option>
+                                                        <option>高雄市</option>
+                                                    </select>
+                                                </td>
+                                                <td class="tg-s6z2">生日</td>
+                                                <td class="tg-s6z2" colspan="4"><input class="form-control2" id="BirthDay_2" type="date" style="width:90%" value="" />  &nbsp;<i class="fa fa-calendar"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-031e">血型</td>
+                                                <td class="tg-s6z2" colspan="12">
+                                                    <select id="BloodStyle_2" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>A</option>
+                                                        <option>B</option>
+                                                        <option>O</option>
+                                                        <option>AB</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-031e" rowspan="4">家庭住址</td>
+                                                <td class="tg-s6z2" colspan="7">
+                                                    <select id="AddressNation1_2" class="form-control2" style="width:85px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台灣</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                    省
+                                                    <select id="AddressLocation1_2" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台北市</option>
+                                                        <option>新北市</option>
+                                                        <option>桃園市</option>
+                                                        <option>基隆市</option>
+                                                        <option>新竹市</option>
+                                                        <option>宜蘭市</option>
+                                                        <option>花蓮市</option>
+                                                        <option>台東市</option>
+                                                        <option>嘉義市</option>
+                                                        <option>南投市</option>
+                                                        <option>高雄市</option>
+                                                    </select>
+
+
+                                                    <input id="Address1_2" class="form-control2" style="width:55%" value="" />
+                                                </td>
+                                                <td class="tg-s6z2" rowspan="4">電話</td>
+                                                <td class="tg-s6z2" colspan="4"><input class="form-control2" id="Telephone1_2" style="width:90%" value="" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-s6z2" colspan="7">
+                                                    <select id="AddressNation2_2" class="form-control2" style="width:85px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台灣</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                    省
+                                                    <select id="AddressLocation2_2" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台北市</option>
+                                                        <option>新北市</option>
+                                                        <option>桃園市</option>
+                                                        <option>基隆市</option>
+                                                        <option>新竹市</option>
+                                                        <option>宜蘭市</option>
+                                                        <option>花蓮市</option>
+                                                        <option>台東市</option>
+                                                        <option>嘉義市</option>
+                                                        <option>南投市</option>
+                                                        <option>高雄市</option>
+                                                    </select>
+
+                                                    <input id="Address2_2" style="width:55%" value="" />
+                                                </td>
+                                                <td class="tg-s6z2" colspan="4"><input class="form-control2" id="Telephone2_2" style="width:90%" value="" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-s6z2" colspan="7">
+                                                    <select id="AddressNation3_2" class="form-control2" style="width:85px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台灣</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                    省
+                                                    <select id="AddressLocation3_2" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台北市</option>
+                                                        <option>新北市</option>
+                                                        <option>桃園市</option>
+                                                        <option>基隆市</option>
+                                                        <option>新竹市</option>
+                                                        <option>宜蘭市</option>
+                                                        <option>花蓮市</option>
+                                                        <option>台東市</option>
+                                                        <option>嘉義市</option>
+                                                        <option>南投市</option>
+                                                        <option>高雄市</option>
+                                                    </select>
+
+
+                                                    <input id="Address3_2" class="form-control2" style="width:55%" value="" />
+                                                </td>
+                                                <td class="tg-s6z2" colspan="4">
+
+
+                                                    <input id="Telephone3_2" class="form-control2" style="width:90%" value="" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-s6z2" colspan="7">
+                                                    <select id="AddressNation4_2" class="form-control2" style="width:85px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台灣</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                    省
+                                                    <select id="AddressLocation4_2" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台北市</option>
+                                                        <option>新北市</option>
+                                                        <option>桃園市</option>
+                                                        <option>基隆市</option>
+                                                        <option>新竹市</option>
+                                                        <option>宜蘭市</option>
+                                                        <option>花蓮市</option>
+                                                        <option>台東市</option>
+                                                        <option>嘉義市</option>
+                                                        <option>南投市</option>
+                                                        <option>高雄市</option>
+                                                    </select>
+
+                                                    <input id="Address4_2" class="form-control2" style="width:55%" value="" />
+                                                </td>
+                                                <td class="tg-s6z2" colspan="4"><input class="form-control2" id="Telephone4_2" style="width:90%" value="" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-031e">學前教育</td>
+                                                <td class="tg-s6z2" colspan="12">
+                                                    <select id="kidornot_2" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>曾進幼稚園</option>
+                                                        <option>未曾進幼稚園</option>
+                                                    </select>
+                                                    共<input id="kidornotYear_2" class="form-control2" style="width:10%" value="" />年
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-031e" rowspan="19">家庭狀況</td>
+                                                <td class="tg-031e">直系血親</td>
+                                                <td class="tg-031e" colspan="12">
+                                                    父 <input id="FatherLive_2" class="form-control2" style="width:10%" value="" />(存、歿) (<input class="form-control2" id="FatherAge_2" style="width:10%" value="" />年生) &nbsp;&nbsp;祖父 <input class="form-control2" id="GrandFatherLive_2" style="width:10%" value="" />(存、歿)
+                                                    <br>
+                                                    母 <input id="MomLive_2" class="form-control2" style="width:10%" value="" />(存、歿) (<input class="form-control2" id="MomAge_2" style="width:10%" value="" />年生) &nbsp;&nbsp;祖母 <input class="form-control2" id="GrandMotherLive_2" style="width:10%" value="" />(存、歿)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-031e">父母教育程度</td>
+                                                <td class="tg-031e" colspan="12">
+                                                    父：
+                                                    <select id="FatherKnowWord_2" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>識字</option>
+                                                        <option>不識字</option>
+                                                    </select>
+                                                    <select id="FatherSchool_2" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>小學</option>
+                                                        <option>國(初)中</option>
+                                                        <option>高中(職)</option>
+                                                        <option>專科</option>
+                                                        <option>學士</option>
+                                                        <option>碩士</option>
+                                                        <option>博士</option>
+                                                    </select>
+                                                    &nbsp;&nbsp;
+                                                    <br>
+                                                    <br>
+
+                                                    母：
+                                                    <select id="MotherKnowWord_2" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option selected>識字</option>
+                                                        <option>不識字</option>
+                                                    </select>
+                                                    <select id="MotherSchool_2" class="form-control2" style="width:200px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>小學</option>
+                                                        <option>國(初)中</option>
+                                                        <option>高中(職)</option>
+                                                        <option>專科</option>
+                                                        <option>學士</option>
+                                                        <option>碩士</option>
+                                                        <option>博士</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l" rowspan="4">家長</td>
+                                                <td class="tg-baqh" colspan="2">稱謂</td>
+                                                <td class="tg-baqh" colspan="2">姓名</td>
+                                                <td class="tg-baqh">職業</td>
+                                                <td class="tg-baqh" colspan="2">工作機構</td>
+                                                <td class="tg-baqh" colspan="2">職稱</td>
+                                                <td class="tg-baqh" colspan="2">電話</td>
+                                                <td class="tg-baqh">備註</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh" colspan="2">父</td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="FatherName_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh"><input class="form-control2" id="FatherWork_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="FatherWorkPlace_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="FatherWorkTitle_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="FatherWorkPhone_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh">
+                                                    <select id="DadNoteBorn_2" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option selected>生</option>
+                                                        <option>繼</option>
+                                                        <option>養</option>
+                                                    </select>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh" colspan="2">母</td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="MotherName_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh"><input class="form-control2" id="MotherWork_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="MotherWorkPlace_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="MotherWorkTitle_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="MotherWorkPhone_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh">
+                                                    <select id="MomNoteBorn_2" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option selected>生</option>
+                                                        <option>繼</option>
+                                                        <option>養</option>
+                                                    </select>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="OtherFamilyTiltle_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="OtherFamilyName_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh"><input class="form-control2" id="OtherFamilyWork_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="OtherFamilyWorkPlace_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="OtherFamilyWorkTitle_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="OtherFamilyWorkPhone_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh">
+                                                    <select id="OtherNoteBorn_2" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>生</option>
+                                                        <option>繼</option>
+                                                        <option>養</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">監護人</td>
+                                                <td class="tg-baqh" colspan="12">
+                                                    姓名: <input style="width:10%" class="form-control2" id="GuardianName_2" value="" />
+                                                    性別: <select id="GuardianSex_2" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option selected>男</option>
+                                                        <option>女</option>
+                                                    </select> &nbsp;&nbsp;
+                                                    關係: <input id="GuardianRelation_2" class="form-control2" style="width:10%" value="" />
+
+
+                                                    <br>
+                                                    通訊處:
+                                                    <select id="GuardianAddressNation_2" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台灣</option>
+                                                        <option>其他</option>
+                                                    </select>
+                                                    省
+                                                    <select id="GuardianAddressLocation_2" class="form-control2" style="width:100px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option>台北市</option>
+                                                        <option>新北市</option>
+                                                        <option>桃園市</option>
+                                                        <option>基隆市</option>
+                                                        <option>新竹市</option>
+                                                        <option>宜蘭市</option>
+                                                        <option>花蓮市</option>
+                                                        <option>台東市</option>
+                                                        <option>嘉義市</option>
+                                                        <option>南投市</option>
+                                                        <option>高雄市</option>
+                                                    </select>
+
+                                                    <input id="GuardianAddress_2" class="form-control2" style="width:50%" value="" />
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l" rowspan="5">兄弟姊妹(按出生順序填寫)<br>學生本人排行第<input class="form-control2" id="BornOrder_2" style="width:80%" value="" /></td>
+                                                <td class="tg-baqh">稱謂</td>
+                                                <td class="tg-baqh" colspan="2">姓名</td>
+                                                <td class="tg-baqh" colspan="2">畢(肄)業業學校<br></td>
+                                                <td class="tg-baqh" colspan="2">出生年月</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh"><input class="form-control2" id="BroSisTitle_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="BroSisName_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" id="BroSisSchool_2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2">
+                                                    <input id="BroSisBirthday_2" class="form-control2" type="date" style="width:80%" value="" />
+                                                    <i class="fa fa-calendar"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2">
+                                                    <input type="date" class="form-control2" style="width:80%" value="" />
+                                                    <i class="fa fa-calendar"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2">
+                                                    <input type="date" class="form-control2" style="width:80%" value="" />
+                                                    <i class="fa fa-calendar"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2"><input class="form-control2" style="width:90%" value="" /></td>
+                                                <td class="tg-baqh" colspan="2">
+                                                    <input type="date" class="form-control2" style="width:80%" value="" />
+                                                    <i class="fa fa-calendar"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l" rowspan="2">父母關係</td>
+                                                <td class="tg-baqh" colspan="6" rowspan="2">1. 同住 2. 分住 3. 分居 4. 離婚 5. 其他</td>
+                                                <td class="tg-baqh" colspan="6">二年級</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="ParentReation1_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">家庭氣氛</td>
+                                                <td class="tg-baqh" colspan="6">1. 很和諧 2. 和諧 3. 普通 4. 不和諧 5. 很不和諧</td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="FamilyStyle1_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">父母管教方式</td>
+                                                <td class="tg-baqh" colspan="6">1. 民主式 2. 權威式 3. 放任式 4. 其他</td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="EducationStyle1_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">居住環境</td>
+                                                <td class="tg-baqh" colspan="6">1. 住宅區 2. 商業區 3. 混和(住、商、工)區 4. 軍眷區 5. 農村 6. 漁村 7. 工礦區 8. 山地 9. 其他</td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="LocationStyle1_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">本人住宿</td>
+                                                <td class="tg-baqh" colspan="6">1. 住在家裡(學區內) 2. 住在家裡(學區外) 3. 寄居親友家裡 4. 其他</td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="LiveStyle1_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">經濟狀況</td>
+                                                <td class="tg-baqh" colspan="6">1. 富裕 2. 小康 3. 普通 4. 清寒 5. 貧困</td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="RichStyle1_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh" rowspan="6">學習狀況</td>
+                                                <td class="tg-yw4l" rowspan="2">最喜歡科目<br>(至少選三項)<br>最感困難科目</td>
+                                                <td class="tg-baqh" colspan="5" rowspan="2">1. 語文 2. 健康與體育 3. 社會 4. 藝術與人文 5. 自然與生活科技 6. 數學 7. 綜合活動</td>
+                                                <td class="tg-baqh">最喜歡</td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="LikeSubject1_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="LikeSubject2_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="LikeSubject3_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    <br>
+                                                    <br>
+
+                                                    <select id="LikeSubject4_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="LikeSubject5_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="LikeSubject6_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh">最困難</td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="HardSubject1_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="HardSubject2_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="HardSubject3_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    <br>
+                                                    <br>
+
+                                                    <select id="HardSubject4_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="HardSubject5_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="HardSubject6_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">特殊才能<br>(至少選三項)</td>
+                                                <td class="tg-baqh" colspan="6">1. 無 2. 球類 3. 田徑 4. 游泳 5. 武術(  ) 6. 美術 7. 歌唱 8. 樂器演奏(  ) 9. 工藝 10. 家事 11. 演說 12. 寫作 13. 舞蹈 14. 戲劇 15. 書法 16. 珠算 17. 領導 18. 其他 </td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="SpecialSkill1_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="SpecialSkill2_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="SpecialSkill3_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    <br>
+                                                    <br>
+
+                                                    <select id="SpecialSkill4_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="SpecialSkill5_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    &nbsp;
+
+                                                    <select id="SpecialSkill6_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">休閒興趣(至多選三項)</td>
+                                                <td class="tg-baqh" colspan="6">1. 電視電影 2. 閱讀 3. 登山 4. 露營 5. 旅行郊遊 6. 美術 7. 歌唱 8. 樂器演奏() 9. 釣魚 10. 划船游泳 11. 集郵 12. 繪畫 13. 舞蹈 14. 打球 15. 編織 16. 下棋 17. 養小動物 18. 其他</td>
+                                                <td class="tg-baqh" colspan="6">
+                                                    <select id="Interested1_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    &nbsp;
+                                                    &nbsp;
+                                                    &nbsp;
+                                                    <select id="Interested2_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                    &nbsp;
+                                                    &nbsp;
+                                                    &nbsp;
+                                                    <select id="Interested3_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        <option>11</option>
+                                                        <option>12</option>
+                                                        <option>13</option>
+                                                        <option>14</option>
+                                                        <option>15</option>
+                                                        <option>16</option>
+                                                        <option>17</option>
+                                                        <option>18</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l" rowspan="2">擔任校內或班內職務</td>
+                                                <td class="tg-baqh" rowspan="2">二年級</td>
+                                                <td class="tg-baqh" colspan="6">1.<input class="form-control2" id="ClassTitle1_2" style="width:90%" value="" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh" colspan="6">2.<input class="form-control2" id="ClassTitle2_2" style="width:90%" value="" /></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l" colspan="8"></td>
+                                                <td class="tg-yw4l">二年級</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l" rowspan="7">生活適應</td>
+                                                <td class="tg-yw4l">生活習慣</td>
+                                                <td class="tg-baqh" colspan="6">1. 整潔 2. 髒亂 3. 勤勞 4. 懶惰 5. 節儉  6. 浪費 7. 作息有規律 8. 作息無規律 </td>
+                                                <td class="tg-baqh" colspan="">
+                                                    <select id="LifeCustom_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">人際關係</td>
+                                                <td class="tg-baqh" colspan="6">1. 和氣 2. 好爭吵 3. 合群 4. 自我中心 5. 活潑 6. 冷漠 7. 信賴他人 8. 多疑善妒</td>
+                                                <td class="tg-baqh" colspan="">
+                                                    <select id="PeopleRelation_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">外向行為</td>
+                                                <td class="tg-baqh" colspan="6">1. 領導力強 2. 欺負同伴 3. 健談 4. 常講粗話 5. 慷慨 6. 好遊蕩 7. 熱心公務 8. 愛唱反調</td>
+                                                <td class="tg-baqh" colspan="">
+                                                    <select id="OuterBehavior_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">內向行為</td>
+                                                <td class="tg-baqh" colspan="6">1. 謹慎 2. 畏縮 3. 文靜 4. 過分沉默 5. 自信 6. 過分依賴 7. 情緒穩定 8. 多愁善感</td>
+                                                <td class="tg-baqh" colspan="">
+                                                    <select id="InnerBehavior_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">學習行為</td>
+                                                <td class="tg-baqh" colspan="6">1. 專心 2. 分心 3. 積極努力 4. 被動馬虎 5. 有恆心 6. 半途而廢 7. 深思好問 8. 偏愛或偏惡某些功課</td>
+                                                <td class="tg-baqh" colspan="">
+                                                    <select id="StudyBehavior_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">不良習慣</td>
+                                                <td class="tg-baqh" colspan="6">1. 無 2. 愛發怪聲 3. 口吃 4. 作弄他人 5. 吮拇指咬指甲 6. 沉迷不良書刊 7. 吸菸 8. 吸毒</td>
+                                                <td class="tg-baqh" colspan="">
+                                                    <select id="BadBehavior_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-yw4l">焦慮症狀</td>
+                                                <td class="tg-baqh" colspan="6">1. 無 2. 坐立不安 3. 表情緊張 4. 不停玩弄東西 5. 發抖 6. 肚子痛 7. 胸痛 8. 頭痛</td>
+                                                <td class="tg-baqh" colspan="">
+                                                    <select id="Anxiety_2" class="form-control2" style="width:70px;font-size:16px; line-height:35px;font-weight:bold;">
+                                                        <option></option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <button type="button" class="btn btn-warning" onclick="">複製資料至下一年度</button>
+                                    </div>
+
+                                    <div id="menu3" class="tab-pane fade" style="padding:10px">
+                                    </div>
+                                    <div id="menu4" class="tab-pane fade" style="padding:10px">
+                                    </div>
+                                    <div id="menu5" class="tab-pane fade" style="padding:10px">
+                                    </div>
+                                    <div id="menu6" class="tab-pane fade" style="padding:10px">
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-right btn-success" onclick="SaveResult()" data-dismiss="modal">
+                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                    儲存結果
+                </button>
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+

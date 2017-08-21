@@ -1,0 +1,20 @@
+
+.ng-carousel slide {
+    /*background-color: #999;*/
+    text-align: left;
+    font-size: 18px;	/*跑馬燈字大小*/
+    line-height: 30px;
+    /*color: #ffffff;*/
+    /*background: rgba(0,0,0,0.35);*/
+}
+
+.ng-carousel slide.empty {
+    background: none;
+    background: rgba(0,0,0,0.35);
+}
+
+.ng-carousel slide:not(.empty):nth-child(odd) {
+  /*background-color: #aaa;*/
+  /*background: rgba(0,0,0,0.35);*/
+  /*color: #ffffff;*/
+}
